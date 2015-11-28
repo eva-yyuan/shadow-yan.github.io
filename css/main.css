@@ -815,7 +815,7 @@ body {
 .sidebar-toggle {
   position: fixed;
   right: 50px;
-  bottom: 45px;
+  bottom: 80px;
   width: 15px;
   height: 15px;
   padding: 5px;
@@ -961,7 +961,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e5d9ba;
+  background: #6b6966;
 }
 .sidebar-nav {
   margin: 0 0 20px;
