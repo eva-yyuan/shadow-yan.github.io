@@ -1,0 +1,853 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="css,选择器," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="1、    常用选择器
+a)    元素选择器（简单选择器/类型选择器）：匹配特定标签的元素，格式为 标签 { …样式…}，例如：12   p&amp;#123;color:red;&amp;#125;h1&amp;#123;font-weight:bold;&amp;#125;
+b)    后代选择器：匹配特定元素或者元素组的后代，格式为 标签 后代{ …样式…}，例如：12div p&amp;#123;color:red:&amp;#125">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS选择器整理">
+<meta property="og:url" content="http://yanyuans.com/2015/08/08/CSS选择器整理/index.html">
+<meta property="og:site_name" content="学习笔记-生活随笔">
+<meta property="og:description" content="1、    常用选择器
+a)    元素选择器（简单选择器/类型选择器）：匹配特定标签的元素，格式为 标签 { …样式…}，例如：12   p&amp;#123;color:red;&amp;#125;h1&amp;#123;font-weight:bold;&amp;#125;
+b)    后代选择器：匹配特定元素或者元素组的后代，格式为 标签 后代{ …样式…}，例如：12div p&amp;#123;color:red:&amp;#125">
+<meta property="og:updated_time" content="2015-11-29T05:11:23.325Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS选择器整理">
+<meta name="twitter:description" content="1、    常用选择器
+a)    元素选择器（简单选择器/类型选择器）：匹配特定标签的元素，格式为 标签 { …样式…}，例如：12   p&amp;#123;color:red;&amp;#125;h1&amp;#123;font-weight:bold;&amp;#125;
+b)    后代选择器：匹配特定元素或者元素组的后代，格式为 标签 后代{ …样式…}，例如：12div p&amp;#123;color:red:&amp;#125">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> CSS选择器整理 | 学习笔记-生活随笔 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">
+<h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">随记记录</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> 
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> 
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> 
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> 
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> 
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'rSG_ej2bTsNhJYNoWASS','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS选择器整理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-08-08T11:44:39+08:00" content="2015-08-08">
+              2015-08-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/08/08/CSS选择器整理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/08/CSS选择器整理/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p><strong>1、    常用选择器</strong></p>
+<p>a)    元素选择器（简单选择器/类型选择器）：匹配特定标签的元素，格式为 标签 { …样式…}，例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">   <span class="tag">p</span><span class="rules">&#123;<span class="rule"><span class="attribute">color</span>:<span class="value">red</span></span>;&#125;</span></span><br><span class="line"><span class="tag">h1</span><span class="rules">&#123;<span class="rule"><span class="attribute">font-weight</span>:<span class="value">bold</span></span>;&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>b)    后代选择器：匹配特定元素或者元素组的后代，格式为 标签 后代{ …样式…}，例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">div</span> <span class="tag">p</span><span class="rules">&#123;<span class="rule"><span class="attribute">color</span>:<span class="value">red:</span></span></span>&#125;</span><br><span class="line"><span class="tag">ul</span> <span class="tag">li</span><span class="rules">&#123;<span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>c)    ID选择器：匹配特定ID的元素，格式为 #ID{ …样式…}，例如:<a id="more"></a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#information&#123;font-size：<span class="number">14</span>px;&#125;</span></span><br><span class="line"><span class="preprocessor">#blog&#123;color:#<span class="number">000000</span>;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>d)    类选择器：匹配特定class的所有元素，格式为 .class{ …样式…}，例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.last</span><span class="rules">&#123;<span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#dddddd</span></span></span>;&#125;</span></span><br><span class="line"><span class="class">.infor</span><span class="rules">&#123;<span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>e)    选择器分组：多个元素共享同一个样式，元素与元素之间用“,”隔开，格式为 标签，标签{…样式…}例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">p</span>, <span class="tag">h2</span><span class="rules">&#123;<span class="rule"><span class="attribute">color</span>:<span class="value"><span class="hexcolor">#ffffff</span></span></span>; <span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#970914</span></span></span>;&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>   元素选择器和后代选择器适合应用于那些应用范围广的一般性样式，想要匹配更特定的元素，可以使用ID选择器和类选择，在实际的项目应用中结合使用元素、后代、ID和类这几种选择比较常见。我们在使用ID选择器的时候建议直接使用“#ID”而不是“div#ID”,因为后面的写法是先查找所有的div，然后匹配相应ID的，读取速度没有前者快，而且ID在整个文档中是唯一的，不必担心匹配到多个。</p>
+<p><strong>2、    伪类选择器：</strong><br>    有时候我们需要根据文档结构之外的其他条件对元素应用样式，例如表单元素或者链接的状态，这要使用伪类选择器来完成：</p>
+<p>a)    :link，:visited，:active，:hover  与链接相关的伪类，它们的顺序为link-&gt;visited-&gt;hover-&gt;active,避免出现hover的样式读取不到的问题（鼠标经过未访问的链接时，同时拥有link 和hover两个属性，css采取就近原则，优先满足最近的link样式，而放弃hover样式）。</p>
+<p>:link和:visited只能应用于锚元素，:hover,:active和:focus理论上可以应用于任何元素。:hover在IE7+中可以应用于任何对象，在IE5/6中，仅能应用于a对象，而且该对象必须要有href属性，想要在ie5/6下应用，可以在标签外添加一个a标签，并且设置a:hover{…样式…}，然后再写a标签内的元素样式。:active和:focus则被忽略。</p>
+<p>b)    :first-child匹配父元素的第一个子元素，格式为 标签:first-child{ …样式…}，例如<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">p</span><span class="pseudo">:first-child</span>&#123;<span class="attribute">color</span>:<span class="hexcolor">#ffffff</span>;&#125; <span class="comment">//设置属于其父元素的第1个子元素的每个P的背景色</span></span><br></pre></td></tr></table></figure></p>
+<p>c)    ：lang(a)匹配lang属性为a的元素，格式为 标签：lang(a){…样式…}，例如:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">p</span><span class="pseudo">:lang(en)</span><span class="rules">&#123;<span class="rule"><span class="attribute">background</span>:<span class="value">yellow</span></span>;&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>3、    通用选择器：</strong></p>
+<p>a)    通用选择器可能是所有选择器中最强大却最少使用的，它匹配所有可用元素，格式为 *{…样式…}，例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*<span class="rules">&#123;<span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;<span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span></span></span>;&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>4、    高级选择器：</strong></p>
+<p>a)    子选择器：子选择器只选择元素的直接后代（而后代选择器选择一个元素的所有后代），即子元素，格式为 父标签&gt;子标签{…样式…}，例如：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">h1</span> &gt; <span class="tag">strong</span> &#123;<span class="attribute">color</span>:red;&#125;  <span class="comment">//h1的子元素strong字体颜色为红色</span></span><br></pre></td></tr></table></figure></p>
+<p>b)    相邻兄弟选择器：选择紧接在另一个元素后的匹配元素，而且二者有相同的父元素，格式为 标签+标签{…样式…}，例如：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">p</span> + <span class="tag">p</span>&#123;<span class="attribute">margin-top</span>:<span class="number">10px</span>;&#125; <span class="comment">//紧跟p元素之后的p元素</span></span><br></pre></td></tr></table></figure></p>
+<p>c)    同级兄弟选择器：选择紧接在另一个元素后的所有匹配元素，二者有相同的父元素，格式为 标签~标签{…样式…}，例如：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">p</span>~<span class="tag">ul</span>&#123;<span class="attribute">background</span>:<span class="hexcolor">#dddddd</span>;&#125; <span class="comment">//p元素自后所有的同级ul元素</span></span><br></pre></td></tr></table></figure></p>
+<p>d)    属性选择器：根据元素的属性来匹配，其属性可以是标准属性，也可以是自定义属性，格式为 标签[attr]{…样式…},例如：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[title]   <span class="comment">//选择有title属性的所有元素</span></span><br><span class="line">[attr = <span class="variable"><span class="keyword">val</span>] //选择属性为<span class="keyword">val</span>的所有元素  [title</span> = “gif”]</span><br><span class="line">[attr ^= <span class="variable"><span class="keyword">val</span>]  //选择属性以<span class="keyword">val</span>开头的所有元素  [title ^</span>= “jian”]</span><br><span class="line">[attr $= <span class="variable"><span class="keyword">val</span>]  //选择属性以<span class="keyword">val</span>结束的所有元素  [title</span> $= “.png”]</span><br><span class="line">[attr *= <span class="variable"><span class="keyword">val</span>]  //选择属性中包含<span class="keyword">val</span>的所有元素  [title *</span>= “gif”]</span><br><span class="line">[attr ~=<span class="variable"><span class="keyword">val</span> ]  //选择属性中包含一个以空格分割的词为<span class="keyword">val</span>的所有元,即属性中必须有这个词，而且这个词要与其他词之间有空格分割  [title~</span>=”flow”]</span><br><span class="line">[attr|=<span class="variable"><span class="keyword">val</span>]  //匹配属性为<span class="keyword">val</span>或者以<span class="keyword">val</span>-开头的所有元素  [lang|</span>=”en”]</span><br></pre></td></tr></table></figure></p>
+<p>e)    伪元素选择器：所有的伪元素选择器都必须放在出现该伪元素的选择器的最后边，也就是说伪元素选择器不能跟任何派生选择器（p:after span这个是不合法的），格式为 标签:伪元素{…样式…},例如：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="pseudo">:first-letter</span>  <span class="comment">//设置选择标签的首字母  </span></span><br><span class="line"><span class="tag">p</span><span class="pseudo">:first-letter</span>&#123;<span class="attribute">color</span>:<span class="hexcolor">#eeeeee</span>;&#125;</span><br><span class="line"><span class="pseudo">:first-line</span>  <span class="comment">//设置选择标签的首行  </span></span><br><span class="line"><span class="tag">p</span><span class="pseudo">:first-line</span>&#123;<span class="attribute">color</span>:<span class="hexcolor">#eeeeee</span>;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>能够与:first-letter和:first-line一起使用的属性有:<br>            a)    字体<br>            b)    字体颜色<br>            c)    背景属性<br>            d)    外边距属性<br>            e)    内边距属性<br>            f)    边框属性<br>            g)    Text-decoration<br>            h)    Vertical-align<br>            i)    Text-transform<br>            j)    Line-height<br>            k)    Float<br>            l)    clear</p>
+<p>:before  //设置选择标签的内容前面插入内容，通过设置content属性来指定要插入的内容，例如：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">p</span><span class="pseudo">:before</span> &#123;<span class="attribute">content</span>:”段落”; <span class="attribute">color</span>:red;&#125;<span class="comment">// 在段落之前插入红色字体的“段落”</span></span><br></pre></td></tr></table></figure></p>
+<pre><code><span class="pseudo">:after</span>  <span class="comment">//设置选择标签的内容之后插入内容，通过设置content属性来指定要插入的内容，例如：</span>
+</code></pre><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">p</span><span class="pseudo">:after</span>&#123;<span class="attribute">content</span>:”段落”; <span class="attribute">color</span>:red;&#125;<span class="comment">// 在段落之后插入红色字体的“段落”</span></span><br></pre></td></tr></table></figure>
+<p>f)    结构性伪类选择器：结构性伪类选择器的冒号前面可以不添加任何标签做限定，也可以添加标签做选择。</p>
+<p>i.    :root 选择文档根元素，对于HTML文档，就是HTML元素<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="pseudo">:root</span><span class="rules">&#123;<span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>ii.    :empty 选择没有任何内容（包括空格和文本）的匹配元素（）<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">p</span><span class="pseudo">:empty</span><span class="rules">&#123;<span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span></span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>iii.:not(s) 选择不符合当前选择器的任何元素<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="function"><span class="title">not</span><span class="params">(p)</span></span> <span class="comment">//所有不是p元素的元素</span></span><br></pre></td></tr></table></figure></p>
+<p>iv.      :nth-child(n) 选择属于父元素的第n个子元素，n可以是数字、关键字或公式<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">p</span><span class="pseudo">:nth-child</span>(<span class="number">2</span>)&#123;<span class="attribute">background</span>:red&#125; <span class="comment">//设置父元素的第二个子元素且为p标签的背景色，当为1的时候相当于:firsr-child</span></span><br></pre></td></tr></table></figure></p>
+<p>v.    :nth-of-type(n) 选择属于父元素的第n个标签元素，n可以是数字、关键字或公式</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">p</span>: nth-<span class="keyword">of</span>-<span class="typedef"><span class="keyword">type</span><span class="container">(2)</span><span class="container">&#123;background:red&#125;</span> //设置父元素中的第二个p元素的背景色</span></span><br></pre></td></tr></table></figure>
+<pre><code>vi.    <span class="symbol">:nth-last-child</span>(n) 选择属于父元素的倒数第n个子元素，n可以是数字、关键字或公式
+</code></pre><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">p</span><span class="pseudo">:nth-last-child</span>(<span class="number">2</span>)&#123;<span class="attribute">background</span>:red&#125; <span class="comment">//设置父元素的倒数第二个子元素且为p标签的背景色，当为1的时候相当于:firsr-child</span></span><br></pre></td></tr></table></figure>
+<pre><code>vii. <span class="symbol">:nth-last-of-type</span>(n) 选择属于父元素的倒数第n个标签元素，n可以是数字、关键字或公式
+</code></pre><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">p</span>: nth-last-<span class="keyword">of</span>-<span class="typedef"><span class="keyword">type</span><span class="container">(2)</span><span class="container">&#123;background:red&#125;</span> //设置父元素中的倒数第二个p元素的背景色</span></span><br></pre></td></tr></table></figure>
+<p>nth-child和nth-of-type的不同之处是前者是父元素的第几个子元素而且这个子元素匹配相应的标签才会生效，而后者是父元素中的第几个相匹配的子元素，不计算其他不符合的元素，nth-last-child、nth-last-of-child是与nth-child、nth-of-type相对应的倒叙设置方法。</p>
+<p>:last-child选择属于父元素的最后一个子元素，等同于:nth-last-child(1)</p>
+<p>:first-of-type 选择属于父元素的第1个子元素，等同于:nth-of-type(1)</p>
+<p>:last-of-type 选择属于父元素的第1个子元素，等同于:nth-last-of-type(1)</p>
+<p> :target  选择文档中当前活动的目标元素（URL带有后面根由锚名称#，指向文档内某个具体的元素，这个被链接的元素就是目标元素-targetelement。）</p>
+<p>g)    UI元素伪类选择器：</p>
+<p>i.    :enabled  选择表单中处于激活状态的元素<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">input</span><span class="pseudo">:enabled</span>&#123;<span class="attribute">background</span>:<span class="hexcolor">#ffff00</span>;&#125;  <span class="comment">//设置处于激活状态的元素背景色</span></span><br></pre></td></tr></table></figure></p>
+<p>ii.    :disabled  选择表单中处于禁用状态的元素 （与enabled相反）</p>
+<p>iii.:checked  选择表单中被选中的radio或checkbox元素（现在只有Opera支持）</p>
+<p>iv.    ::selection (::-moz-selection火狐中)  选择用户鼠标选取的部分，目前能够应用的属性为：color，background，cursor以及outline</p>
+<p><strong>5、    选择器之间的优先级：</strong></p>
+<p>a)    一般而言，选择器指向越精确，优先级就越高，通常情况下：</p>
+<figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素选择器&lt;类选择器&lt;<span class="variable">ID</span>选择器&lt;行内样式&lt;<span class="exclamation_mark">!</span><span class="function_or_atom">important</span></span><br></pre></td></tr></table></figure>
+<p>属性选择器、伪类选择器和类选择器优先级一样，伪元素选择器和元素选择器一样</p>
+<p>b)    CSS遵循继承原则（如果父标签定义了某个样式，则默认对应的子标签也应用该样式）和就近原则（离标签越近的CSS同级样式，优先级也越高）</p>
+<p><strong>CSS的层叠与继承</strong><br>1、    CSS层叠</p>
+<p>a)    在样式表中，同一元素可能有两个或者更多规则，CSS通过一个称为层叠的过程处理这种冲突。层叠给每个规则分配一个重要度（即优先级）。根据选择器的特殊性决定规则的次序，具有更特殊选择器的规则优先于具有一般选择器的规则。如果两个规则的特殊性相同，那么后定义的规则优先。<br>2、    CSS继承</p>
+<p>a)    继承是CSS的一个主要特征，父元素在定义某些样式后，其后代也可以应用到这些样式。但是继承也有局限性，有些属性是不能继承的，例如margin、padding、background等</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag">#css</a>
+          
+            <a href="/tags/选择器/" rel="tag">#选择器</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/06/标签语义化以及使用好处/" rel="next" title="标签语义化以及使用好处">
+                <i class="fa fa-chevron-left"></i> 标签语义化以及使用好处
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/08/14/事件处理/" rel="prev" title="与事件处理相关的function：addEventListener、removeEventListener与attachEvent、detachEvent">
+                与事件处理相关的function：addEventListener、removeEventListener与attachEvent、detachEvent <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/08/08/CSS选择器整理/"
+     data-title="CSS选择器整理"
+     data-content=""
+     data-url="http://yanyuans.com/2015/08/08/CSS选择器整理/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/08/08/CSS选择器整理/"
+           data-title="CSS选择器整理" data-url="http://yanyuans.com/2015/08/08/CSS选择器整理/">
+      </div>
+    
+  </div>
+
+
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="shadow" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">shadow</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/shadow-yan" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/shadow_yany" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> Twitter
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/p/1005053810592205/home?from=page_100505&mod=TAB#place" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">友情链接</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://nej.netease.com/" target="_blank">网易前端</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://taobaofed.org/" target="_blank">淘宝前端</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.alloyteam.com/" target="_blank">腾讯前端</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://fex.baidu.com/" target="_blank">百度前端研发部</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.75team.com/" target="_blank">奇舞团</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.baidu.com/link?url=I2wDoza40TSN60WsK-EPY1O8AaxXHopIDoIV33X4I36OgB2ZJ5tJipUzeG6peGGX&wd=&eqid=c47420bd000083fa0000000256233b93" target="_blank">伯乐在线</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.doyoe.com/" target="_blank">css探索之旅</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://jquery.cuishifeng.cn/" target="_blank">jQuery在线文档</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.w3ctech.com/" target="_blank">w3ctech前端社区</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shadow</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yanyuans"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

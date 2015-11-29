@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="心情," />
+  <meta name="keywords" content="js," />
 
 
 
@@ -51,19 +51,22 @@
 
 
 
-<meta name="description" content="今天是网站备案成功的第一天，从上个月中旬开始，就一直在想着什么时候能够通过审核，用“望眼欲穿”来形容一点儿都不为过。不过，当看到审核通过的信息时，那股子的冲劲也随着时间的冲淡慢慢的沉淀消去
-写这篇文章的时候，我正盘着腿，看着书，玩着电脑，带着压力在心中沉淀的那股子郁闷中进行的，写文章也是发泄的一种形式。">
+<meta name="description" content="addEventListener、removeEventListener与attachEvent、detachEvent，前者大部分主流浏览器都支持，为W3C标准，IE8以及更早版本不支持，后者支持IE浏览器
+addEventListener向指定元素添加事件句柄，语法为：1ele.addEventListener(event,function,usecapture)
+  event：事件名称（不">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2015年7月某天的状态">
-<meta property="og:url" content="http://yanyuans.com/2015/07/06/mood1/index.html">
+<meta property="og:title" content="与事件处理相关的function：addEventListener、removeEventListener与attachEvent、detachEvent">
+<meta property="og:url" content="http://yanyuans.com/2015/08/14/事件处理/index.html">
 <meta property="og:site_name" content="学习笔记-生活随笔">
-<meta property="og:description" content="今天是网站备案成功的第一天，从上个月中旬开始，就一直在想着什么时候能够通过审核，用“望眼欲穿”来形容一点儿都不为过。不过，当看到审核通过的信息时，那股子的冲劲也随着时间的冲淡慢慢的沉淀消去
-写这篇文章的时候，我正盘着腿，看着书，玩着电脑，带着压力在心中沉淀的那股子郁闷中进行的，写文章也是发泄的一种形式。">
-<meta property="og:updated_time" content="2015-11-29T05:06:26.150Z">
+<meta property="og:description" content="addEventListener、removeEventListener与attachEvent、detachEvent，前者大部分主流浏览器都支持，为W3C标准，IE8以及更早版本不支持，后者支持IE浏览器
+addEventListener向指定元素添加事件句柄，语法为：1ele.addEventListener(event,function,usecapture)
+  event：事件名称（不">
+<meta property="og:updated_time" content="2015-11-29T05:10:21.364Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2015年7月某天的状态">
-<meta name="twitter:description" content="今天是网站备案成功的第一天，从上个月中旬开始，就一直在想着什么时候能够通过审核，用“望眼欲穿”来形容一点儿都不为过。不过，当看到审核通过的信息时，那股子的冲劲也随着时间的冲淡慢慢的沉淀消去
-写这篇文章的时候，我正盘着腿，看着书，玩着电脑，带着压力在心中沉淀的那股子郁闷中进行的，写文章也是发泄的一种形式。">
+<meta name="twitter:title" content="与事件处理相关的function：addEventListener、removeEventListener与attachEvent、detachEvent">
+<meta name="twitter:description" content="addEventListener、removeEventListener与attachEvent、detachEvent，前者大部分主流浏览器都支持，为W3C标准，IE8以及更早版本不支持，后者支持IE浏览器
+addEventListener向指定元素添加事件句柄，语法为：1ele.addEventListener(event,function,usecapture)
+  event：事件名称（不">
 
 
 
@@ -75,7 +78,7 @@
   };
 </script>
 
-  <title> 2015年7月某天的状态 | 学习笔记-生活随笔 </title>
+  <title> 与事件处理相关的function：addEventListener、removeEventListener与attachEvent、detachEvent | 学习笔记-生活随笔 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -235,7 +238,7 @@
             
             
               
-                2015年7月某天的状态
+                与事件处理相关的function：addEventListener、removeEventListener与attachEvent、detachEvent
               
             
           </h1>
@@ -244,8 +247,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-07-06T21:29:45+08:00" content="2015-07-06">
-              2015-07-06
+            <time itemprop="dateCreated" datetime="2015-08-14T11:45:08+08:00" content="2015-08-14">
+              2015-08-14
             </time>
           </span>
 
@@ -254,8 +257,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -270,8 +273,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/07/06/mood1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/06/mood1/" itemprop="commentsCount"></span>
+                <a href="/2015/08/14/事件处理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/14/事件处理/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -290,9 +293,21 @@
       
 
       
-        <span itemprop="articleBody"><p>今天是网站备案成功的第一天，从上个月中旬开始，就一直在想着什么时候能够通过审核，用“望眼欲穿”来形容一点儿都不为过。不过，当看到审核通过的信息时，那股子的冲劲也随着时间的冲淡慢慢的沉淀消去</p>
-<p>写这篇文章的时候，我正盘着腿，看着书，玩着电脑，带着压力在心中沉淀的那股子郁闷中进行的，写文章也是发泄的一种形式。<br><a id="more"></a><br>2015年已经过去了一半，目标只是在以龟速进行着。对自己有些小小的失望，体重的目标还是没达到，技术还是不过关，对象还没有，家中盖房子补贴，所有的事情都集中在了这个不上不下的年纪，已经想象得到今年回去后的悲惨。不过还是不想将就，将就了一辈子，委屈自己一辈子，何必呢，现在一个人虽然有些寂寞，不过可以享受自我，干嘛赶鸭子一样的把自己摆在地摊上，供人挑选，这和物品有什么区别，只是一个有思想，一个是无意识。</p>
-<p>给自己的目标，在年终之前完成，过年之后，会有大的变动，为了那个变动，自己得加把劲儿，加油吧，2015………………</p>
+        <span itemprop="articleBody"><p>addEventListener、removeEventListener与attachEvent、detachEvent，前者大部分主流浏览器都支持，为W3C标准，IE8以及更早版本不支持，后者支持IE浏览器</p>
+<p>addEventListener向指定元素添加事件句柄，语法为：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ele.<span class="function"><span class="title">addEventListener</span><span class="params">(event,function,usecapture)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>  <strong>event</strong>：事件名称（不含on）比如“click”、“keydown”等<br>  <strong>function</strong>：指定事件触发时执行的函数<br>  <strong>usecapture</strong>：指定事件是否在捕获或者冒泡阶段执行（true：在捕获阶段执行；false：默认，在冒泡阶段执行）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"btnclick"</span>).addEventListener(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="comment">///代码块</span></span><br><span class="line">&#125;,<span class="literal">false</span>)</span><br></pre></td></tr></table></figure></p>
+<p>removeEventListener向指定元素移除由addEventListener方法添加的事件句柄，<a id="more"></a>语法为：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ele.<span class="function"><span class="title">removeEventListener</span><span class="params">(event,function,usecapture)</span></span>  </span><br><span class="line"><span class="comment">//其中移除时传入的参数与添加addEventListener时传入的参数相同，这也就是说通过addEventListener添加的匿名函数无法移除</span></span><br></pre></td></tr></table></figure></p>
+<p>下面的实例则不能够删除addEventListener<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btnclick = <span class="built_in">document</span>.getElementById(<span class="string">"btnclick"</span>);</span><br><span class="line">btnclick.addEventListener(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">2<span class="comment">/////代码块</span></span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br><span class="line">btnclick.removeEventListener(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">2<span class="comment">////代码块</span></span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure></p>
+<p>如果想要进行removeEventListener则先定义function：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">2<span class="comment">/////代码块</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> btnclick = <span class="built_in">document</span>.getElementById(“btnclick”);</span><br><span class="line">btnclick.addEventListener(<span class="string">"click"</span>,f1,<span class="literal">false</span>);</span><br><span class="line">btnclick.removeEventListener(<span class="string">"click"</span>,f1,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+<p>attachEvent作用与addEventListener一样，向指定元素添加事件句柄，语法为：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ele.<span class="function"><span class="title">attachEvent</span><span class="params">(event,function)</span></span></span><br></pre></td></tr></table></figure></p>
+<p><strong>event</strong>：事件名称（含有on）比如“onclick”、“onkeydown”等<br><strong>function</strong>：指定事件触发时执行的函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"btnclick"</span>).attachEvent(<span class="string">"onclick"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="comment">///代码块</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>IE只支持事件冒泡，不存在事件捕捉</p>
+<p>detachEvent作用与removeEventListener功能类似，不过是移除由attachEvent定义的事件，语法为：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ele.<span class="function"><span class="title">detachEvent</span><span class="params">(event,function)</span></span></span><br><span class="line">2<span class="comment">////其中移除时传入的参数与添加attachEvent时传入的参数相同，这也就是说通过attachEvent添加的匿名函数无法移除,这点和removeEventListener一样</span></span><br></pre></td></tr></table></figure></p>
+<p>可以将addEvevtListener和attachEvent整合在一个函数中</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addEvent</span><span class="params">(elm, evType, fn, useCapture)</span> </span>&#123;</span><br><span class="line">2<span class="keyword">if</span> (elm.addEventListener) &#123;</span><br><span class="line">22elm.addEventListener(evType, fn, useCapture);</span><br><span class="line">22<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">2&#125; <span class="keyword">else</span> <span class="keyword">if</span> (elm.attachEvent) &#123;</span><br><span class="line">22<span class="keyword">var</span> r = elm.attachEvent(‘on‘ + evType, fn);</span><br><span class="line">22<span class="keyword">return</span> r;</span><br><span class="line">2&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">22elm[<span class="string">'on'</span> + evType] = fn;<span class="comment">//DOM 0</span></span><br><span class="line">2&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面这个是在别的网址上看到的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> addEvent=(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">2<span class="keyword">if</span>(<span class="built_in">document</span>.addEventListener)&#123;</span><br><span class="line">22<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">el,type,fn</span>)</span>&#123;</span><br><span class="line">222<span class="keyword">if</span>(el.length)&#123;</span><br><span class="line">22                <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;el.length;i++)&#123;</span><br><span class="line">22                    addEvent(el[i],type,fn);</span><br><span class="line">22                &#125;</span><br><span class="line">222&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">22                el.addEventListener(type,fn,<span class="literal">false</span>);</span><br><span class="line">22       &#125;</span><br><span class="line">22&#125;;</span><br><span class="line">2&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">22<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">el,type,fn</span>)</span>&#123;</span><br><span class="line">222<span class="keyword">if</span>(el.length)&#123;</span><br><span class="line">22                <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;el.length;i++)&#123;</span><br><span class="line">22                    addEvent(el[i],type,fn);</span><br><span class="line">22                &#125;</span><br><span class="line">222 &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">22                el.attachEvent(<span class="string">'on'</span>+type,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">22                    <span class="keyword">return</span> fn.call(el,<span class="built_in">window</span>.event);</span><br><span class="line">22                &#125;);</span><br><span class="line">22        &#125;</span><br><span class="line">22&#125;;</span><br><span class="line">    	&#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -301,7 +316,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/心情/" rel="tag">#心情</a>
+            <a href="/tags/js/" rel="tag">#js</a>
           
         </div>
       
@@ -310,12 +325,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2015/08/08/CSS选择器整理/" rel="next" title="CSS选择器整理">
+                <i class="fa fa-chevron-left"></i> CSS选择器整理
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/29/兼容ie6/" rel="prev" title="三列中间自适应排版兼容ie6">
-                三列中间自适应排版兼容ie6 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/08/24/parse与stringify/" rel="prev" title="JSON.parse()与JSON.stringify()  （浏览器兼容性：IE8以上、Chrome、Firefox3.5、Opera10.5、Safari4.0）">
+                JSON.parse()与JSON.stringify()  （浏览器兼容性：IE8以上、Chrome、Firefox3.5、Opera10.5、Safari4.0） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -331,10 +350,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/07/06/mood1/"
-     data-title="2015年7月某天的状态"
+        <div class="ds-share flat" data-thread-key="2015/08/14/事件处理/"
+     data-title="与事件处理相关的function：addEventListener、removeEventListener与attachEvent、detachEvent"
      data-content=""
-     data-url="http://yanyuans.com/2015/07/06/mood1/">
+     data-url="http://yanyuans.com/2015/08/14/事件处理/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -365,8 +384,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/07/06/mood1/"
-           data-title="2015年7月某天的状态" data-url="http://yanyuans.com/2015/07/06/mood1/">
+      <div class="ds-thread" data-thread-key="2015/08/14/事件处理/"
+           data-title="与事件处理相关的function：addEventListener、removeEventListener与attachEvent、detachEvent" data-url="http://yanyuans.com/2015/08/14/事件处理/">
       </div>
     
   </div>

@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="心情," />
+  <meta name="keywords" content="html,innerHTML,outHTML,text,val," />
 
 
 
@@ -51,19 +51,22 @@
 
 
 
-<meta name="description" content="今天是网站备案成功的第一天，从上个月中旬开始，就一直在想着什么时候能够通过审核，用“望眼欲穿”来形容一点儿都不为过。不过，当看到审核通过的信息时，那股子的冲劲也随着时间的冲淡慢慢的沉淀消去
-写这篇文章的时候，我正盘着腿，看着书，玩着电脑，带着压力在心中沉淀的那股子郁闷中进行的，写文章也是发泄的一种形式。">
+<meta name="description" content="今天在使用javascript时，用到了value值，忽然想到了jQuery中的html()、val()和text()，就查看了一下参考资料，整理下他们之间的差异，方便以后查看。
+1.val():用来读取或者设置修改匹配的value值。(如果是select的多选项，则返回相匹配的数组)
+123$(&quot;#input1&quot;).val();//获取value值$(&quot;#input1&quot;).val(&quot;Single">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2015年7月某天的状态">
-<meta property="og:url" content="http://yanyuans.com/2015/07/06/mood1/index.html">
+<meta property="og:title" content="jQuery中html()、val()、text()的区别; javascript中innerHTMl、innerText、outHTML的区别">
+<meta property="og:url" content="http://yanyuans.com/2015/08/01/jQuery中html-val-text/index.html">
 <meta property="og:site_name" content="学习笔记-生活随笔">
-<meta property="og:description" content="今天是网站备案成功的第一天，从上个月中旬开始，就一直在想着什么时候能够通过审核，用“望眼欲穿”来形容一点儿都不为过。不过，当看到审核通过的信息时，那股子的冲劲也随着时间的冲淡慢慢的沉淀消去
-写这篇文章的时候，我正盘着腿，看着书，玩着电脑，带着压力在心中沉淀的那股子郁闷中进行的，写文章也是发泄的一种形式。">
-<meta property="og:updated_time" content="2015-11-29T05:06:26.150Z">
+<meta property="og:description" content="今天在使用javascript时，用到了value值，忽然想到了jQuery中的html()、val()和text()，就查看了一下参考资料，整理下他们之间的差异，方便以后查看。
+1.val():用来读取或者设置修改匹配的value值。(如果是select的多选项，则返回相匹配的数组)
+123$(&quot;#input1&quot;).val();//获取value值$(&quot;#input1&quot;).val(&quot;Single">
+<meta property="og:updated_time" content="2015-11-29T05:21:25.502Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2015年7月某天的状态">
-<meta name="twitter:description" content="今天是网站备案成功的第一天，从上个月中旬开始，就一直在想着什么时候能够通过审核，用“望眼欲穿”来形容一点儿都不为过。不过，当看到审核通过的信息时，那股子的冲劲也随着时间的冲淡慢慢的沉淀消去
-写这篇文章的时候，我正盘着腿，看着书，玩着电脑，带着压力在心中沉淀的那股子郁闷中进行的，写文章也是发泄的一种形式。">
+<meta name="twitter:title" content="jQuery中html()、val()、text()的区别; javascript中innerHTMl、innerText、outHTML的区别">
+<meta name="twitter:description" content="今天在使用javascript时，用到了value值，忽然想到了jQuery中的html()、val()和text()，就查看了一下参考资料，整理下他们之间的差异，方便以后查看。
+1.val():用来读取或者设置修改匹配的value值。(如果是select的多选项，则返回相匹配的数组)
+123$(&quot;#input1&quot;).val();//获取value值$(&quot;#input1&quot;).val(&quot;Single">
 
 
 
@@ -75,7 +78,7 @@
   };
 </script>
 
-  <title> 2015年7月某天的状态 | 学习笔记-生活随笔 </title>
+  <title> jQuery中html()、val()、text()的区别; javascript中innerHTMl、innerText、outHTML的区别 | 学习笔记-生活随笔 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -235,7 +238,7 @@
             
             
               
-                2015年7月某天的状态
+                jQuery中html()、val()、text()的区别; javascript中innerHTMl、innerText、outHTML的区别
               
             
           </h1>
@@ -244,8 +247,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-07-06T21:29:45+08:00" content="2015-07-06">
-              2015-07-06
+            <time itemprop="dateCreated" datetime="2015-08-01T11:41:04+08:00" content="2015-08-01">
+              2015-08-01
             </time>
           </span>
 
@@ -254,8 +257,20 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">jQuery</span>
                   </a>
                 </span>
 
@@ -270,8 +285,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/07/06/mood1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/06/mood1/" itemprop="commentsCount"></span>
+                <a href="/2015/08/01/jQuery中html-val-text/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/01/jQuery中html-val-text/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -290,9 +305,19 @@
       
 
       
-        <span itemprop="articleBody"><p>今天是网站备案成功的第一天，从上个月中旬开始，就一直在想着什么时候能够通过审核，用“望眼欲穿”来形容一点儿都不为过。不过，当看到审核通过的信息时，那股子的冲劲也随着时间的冲淡慢慢的沉淀消去</p>
-<p>写这篇文章的时候，我正盘着腿，看着书，玩着电脑，带着压力在心中沉淀的那股子郁闷中进行的，写文章也是发泄的一种形式。<br><a id="more"></a><br>2015年已经过去了一半，目标只是在以龟速进行着。对自己有些小小的失望，体重的目标还是没达到，技术还是不过关，对象还没有，家中盖房子补贴，所有的事情都集中在了这个不上不下的年纪，已经想象得到今年回去后的悲惨。不过还是不想将就，将就了一辈子，委屈自己一辈子，何必呢，现在一个人虽然有些寂寞，不过可以享受自我，干嘛赶鸭子一样的把自己摆在地摊上，供人挑选，这和物品有什么区别，只是一个有思想，一个是无意识。</p>
-<p>给自己的目标，在年终之前完成，过年之后，会有大的变动，为了那个变动，自己得加把劲儿，加油吧，2015………………</p>
+        <span itemprop="articleBody"><p>今天在使用javascript时，用到了value值，忽然想到了jQuery中的html()、val()和text()，就查看了一下参考资料，整理下他们之间的差异，方便以后查看。</p>
+<p>1.val():用来读取或者设置修改匹配的value值。(如果是select的多选项，则返回相匹配的数组)</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(</span><span class="string">"#input1"</span>).val();<span class="regexp">//</span>获取value值</span><br><span class="line"><span class="variable">$(</span><span class="string">"#input1"</span>).val(<span class="string">"Single2"</span>); <span class="regexp">//</span>设置value值</span><br><span class="line"><span class="variable">$(</span><span class="string">"#select1"</span>).val();<span class="regexp">//test</span>1,test2</span><br></pre></td></tr></table></figure>
+<p>2.text():用来读取或者设置匹配元素的文本内容，（如果元素中包含元素，则只会读取该元素的文本内容，不会读取标签，这是和html()最大的区别）<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(</span><span class="string">"p"</span>).<span class="keyword">text</span>();<span class="comment">///读取所有段落的文本内容</span></span><br><span class="line"><span class="variable">$(</span><span class="string">"p"</span>).<span class="keyword">text</span>(<span class="string">"abcdefg"</span>);<span class="comment">///设置所有段落的文本内容为abcdefg</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>3.html():用来读取或者设置第一个匹配元素的内容（即标签内包含的所有内容,能够读取到所包含的标签）</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(</span><span class="string">"div"</span>).html();<span class="regexp">//</span>读取第一个div中所包含的所有内容</span><br><span class="line"><span class="variable">$(</span><span class="string">"div"</span>).html(<span class="string">"&lt;p&gt;abcdefg&lt;p&gt;"</span>);<span class="regexp">//</span>设置第一个div中所包含的所有内容</span><br></pre></td></tr></table></figure>
+<p>说到jQuery的读取设置标签内容，很容易牵扯到JavaScript的innerHTML、outHTML、innerText：<br>1.innerHTML:这个是w3c标准的属性，能够读取或者设置元素的内容，jQuery中的html()功能是根据原生js的innerHTML实现的，不过因为innerHTML自身的兼容性问题，所以html()(如果innerHTML存在问题，则通过append()添加字符串)和innerHTML还有一定的差异性</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> ss</span>=document.getElementById(<span class="string">"test"</span>);</span><br><span class="line"><span class="variable"><span class="keyword">var</span> ss_html</span>=ss.innerHTML;<span class="comment">//获取到的结果和html()一致ss.innerHTML="abcdefg";</span></span><br></pre></td></tr></table></figure>
+<p>innerHTML在IE6-9中动态给table添加内容会直接报错，这是因为col, colGroup, frameSet, html, head, style, table, tBody, tFoot, tHead, title, and tr objects中的innerHTML只能读取，可以通过append来修改内容</p>
+<p>2.innerText：获取设置匹配元素内的文本内容，这个不是w3c标准的属性，会有浏览器兼容性问题，在火狐下是不支持这个属性的，不过可以用textContent来替代</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ss.innerText=<span class="string">"abcdefg"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getInnerText</span><span class="params">(element)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">typeof</span> ele.textContent == <span class="string">"string"</span>) ? element.textContent : element.innerText;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.outHTML:获取或者设置匹配元素的html（包含匹配的标签，不仅仅是标签所包含的内容），这个不是w3c的标准属性，存在浏览器兼容性（ff 不支持该属性）</p>
 </span>
       
     </div>
@@ -301,7 +326,15 @@
       
         <div class="post-tags">
           
-            <a href="/tags/心情/" rel="tag">#心情</a>
+            <a href="/tags/html/" rel="tag">#html</a>
+          
+            <a href="/tags/innerHTML/" rel="tag">#innerHTML</a>
+          
+            <a href="/tags/outHTML/" rel="tag">#outHTML</a>
+          
+            <a href="/tags/text/" rel="tag">#text</a>
+          
+            <a href="/tags/val/" rel="tag">#val</a>
           
         </div>
       
@@ -310,12 +343,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2015/07/29/兼容ie6/" rel="next" title="三列中间自适应排版兼容ie6">
+                <i class="fa fa-chevron-left"></i> 三列中间自适应排版兼容ie6
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/29/兼容ie6/" rel="prev" title="三列中间自适应排版兼容ie6">
-                三列中间自适应排版兼容ie6 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/08/04/怪异模式和标准模式/" rel="prev" title="doctype怪异模式和标准模式">
+                doctype怪异模式和标准模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -331,10 +368,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/07/06/mood1/"
-     data-title="2015年7月某天的状态"
+        <div class="ds-share flat" data-thread-key="2015/08/01/jQuery中html-val-text/"
+     data-title="jQuery中html()、val()、text()的区别; javascript中innerHTMl、innerText、outHTML的区别"
      data-content=""
-     data-url="http://yanyuans.com/2015/07/06/mood1/">
+     data-url="http://yanyuans.com/2015/08/01/jQuery中html-val-text/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -365,8 +402,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/07/06/mood1/"
-           data-title="2015年7月某天的状态" data-url="http://yanyuans.com/2015/07/06/mood1/">
+      <div class="ds-thread" data-thread-key="2015/08/01/jQuery中html-val-text/"
+           data-title="jQuery中html()、val()、text()的区别; javascript中innerHTMl、innerText、outHTML的区别" data-url="http://yanyuans.com/2015/08/01/jQuery中html-val-text/">
       </div>
     
   </div>

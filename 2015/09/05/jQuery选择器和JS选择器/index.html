@@ -1,0 +1,897 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="jquery,js,选择器," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="jQuery选择器：jQuery选择器的写法和CSS选择器的写法非常相似，在学习之前了解下CSS选择器，对掌握jQuery选择器是非常有帮助的
+(一)    基本选择器：主要包含id选择器、class选择器、*选择器、标签选择器以及复合选择器
+a:    Id选择器：$(“#ID”)  选取id属性为“ID”的元素1$(&quot;#text&quot;)  //选取id属性为“text”的元素
+b:class选择器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery选择器和JS选择器">
+<meta property="og:url" content="http://yanyuans.com/2015/09/05/jQuery选择器和JS选择器/index.html">
+<meta property="og:site_name" content="学习笔记-生活随笔">
+<meta property="og:description" content="jQuery选择器：jQuery选择器的写法和CSS选择器的写法非常相似，在学习之前了解下CSS选择器，对掌握jQuery选择器是非常有帮助的
+(一)    基本选择器：主要包含id选择器、class选择器、*选择器、标签选择器以及复合选择器
+a:    Id选择器：$(“#ID”)  选取id属性为“ID”的元素1$(&quot;#text&quot;)  //选取id属性为“text”的元素
+b:class选择器">
+<meta property="og:updated_time" content="2015-11-29T05:01:27.901Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery选择器和JS选择器">
+<meta name="twitter:description" content="jQuery选择器：jQuery选择器的写法和CSS选择器的写法非常相似，在学习之前了解下CSS选择器，对掌握jQuery选择器是非常有帮助的
+(一)    基本选择器：主要包含id选择器、class选择器、*选择器、标签选择器以及复合选择器
+a:    Id选择器：$(“#ID”)  选取id属性为“ID”的元素1$(&quot;#text&quot;)  //选取id属性为“text”的元素
+b:class选择器">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> jQuery选择器和JS选择器 | 学习笔记-生活随笔 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">
+<h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">随记记录</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> 
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> 
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> 
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> 
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> 
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'rSG_ej2bTsNhJYNoWASS','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                jQuery选择器和JS选择器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-09-05T11:53:42+08:00" content="2015-09-05">
+              2015-09-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/09/05/jQuery选择器和JS选择器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/05/jQuery选择器和JS选择器/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p><strong>jQuery选择器：</strong><br>jQuery选择器的写法和CSS选择器的写法非常相似，在学习之前了解下<a href="http://blog.csdn.net/shadow_yn/article/details/46597297" target="_blank" rel="external">CSS选择器</a>，对掌握jQuery选择器是非常有帮助的</p>
+<p>(一)    基本选择器：主要包含id选择器、class选择器、*选择器、标签选择器以及复合选择器</p>
+<p>a:    Id选择器：$(“#ID”)  选取id属性为“ID”的元素<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#text"</span>)  <span class="comment">//选取id属性为“text”的元素</span></span><br></pre></td></tr></table></figure></p>
+<p>b:class选择器：$(“.class”)  选取所有class属性为“class”的元素（id是单一的，而class则可以多次使用同一命名）<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".test"</span>)  <span class="regexp">//</span>选取文档中所有的<span class="class"><span class="keyword">class</span>属性为“<span class="title">test</span>”的元素</span></span><br></pre></td></tr></table></figure></p>
+<p>c:    *选择器：$(“*”)  选取所有元素<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*<span class="rules">&#123;</span><br><span class="line">2<span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">100%</span></span></span>;</span><br><span class="line">2<span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">100%</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>d:    标签选择器：$(“标签”)  选取文档中所有匹配选择器的元素<a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"p"</span>)  <span class="comment">//选取文档中所有的P元素</span></span><br></pre></td></tr></table></figure></p>
+<p>e:    复合选择器：$(“selector1，selector2，selector3”)   选取文档中所有选择器匹配的元素<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div,p,span,.test"</span>)<span class="regexp">//</span> 选取文档中所有的div、p、span以及<span class="class"><span class="keyword">class</span>属性为“<span class="title">test</span>”的元素</span></span><br></pre></td></tr></table></figure></p>
+<p>(二)    层级选择器：根据元素之间的层次关系来获取特定的元素</p>
+<p>a:    $(“标签1 标签2”)  获取所有标签1中的标签2后代元素<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div span"</span>) <span class="comment">//获取div下所有的span元素</span></span><br></pre></td></tr></table></figure></p>
+<p>b:    $(“标签1&gt;标签2”)  获取所有标签1中的标签2子元素<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div&gt;span"</span>) <span class="comment">//获取div下所有的span子元素</span></span><br></pre></td></tr></table></figure></p>
+<p>c:  \$(“标签1+标签2”)  获取紧跟标签1之后的标签2元素，和$(“标签1”).next(“标签2”)的效果一样<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div+p"</span>) <span class="comment">//获取紧跟div之后的P元素</span></span><br></pre></td></tr></table></figure></p>
+<p>d:\$(“标签1~标签2”)  获取紧跟标签1之后的所有标签2元素，和$(“标签1”).nextAll(“标签2”)的效果一样<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div~p"</span>) <span class="comment">//获取div之后的所有兄弟节点P元素</span></span><br></pre></td></tr></table></figure></p>
+<p>(三)    过滤选择器：过滤选择器可以分为基本过滤、内容过滤、可见性过滤、属性过滤、表单过滤</p>
+<p>A:    基本过滤</p>
+<p> 1、 :first/:last   选取第一个/最后一个元素<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"p:first"</span>)<span class="comment">// 选取第一个P元素</span></span><br><span class="line">$(<span class="string">"p:last"</span>)<span class="comment">// 选取最后一个P元素</span></span><br></pre></td></tr></table></figure></p>
+<p>2、 :first-child/:last-child/:nth-child/:nth-last-child 选取其父元素下第一个/最后一个/第n（&gt;=1）个/倒数第n个匹配的子元素<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"ul li:first-child"</span>) <span class="comment">//选取每一个ul中的第一个子元素，如果第一个不是li，则不匹配，这是和:first的区别</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">"ul li:last-child"</span>) <span class="comment">//选取每一个ul中的最后一个子元素，如果最后一个不是li，则不匹配，这是和:last的区别</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">"ul li:nth-child(n)"</span>) <span class="comment">//选取每一个ul中的第n个子元素，如果第n个不是li，则不匹配</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">"ul li:nth-last-child(n)"</span>) <span class="comment">//选取每一个ul中的倒数第n个子元素，如果倒数第n个不是li，则不匹配</span></span><br></pre></td></tr></table></figure></p>
+<p>3、    :first-of-type/:last-of-type/:nth-of-type/:nth-last-of-child选取其父元素下第一个/最后一个/第n（&gt;=1）个/倒数第n个匹配的子元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"ul li:first-of-type"</span>) <span class="comment">//选取每一个ul中的第一个li子元素,这是和:firs-child的区别</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">"ul li:last-of-type"</span>) <span class="comment">//选取每一个ul中的最后一个li子元素这是和:last-child的区别</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">"ul li:nth-of-type(n)"</span>) <span class="comment">//选取每一个ul中的第n个li子元素，这是和:nth-child(n)的区别</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">"ul li:nth-last-of-type(n)"</span>) <span class="comment">//选取每一个ul中的倒数第n个li子元素，这是和:nth-last-child(n)的区别</span></span><br></pre></td></tr></table></figure>
+<p>4、:only-child/:only-of-type  选取父元素中唯一的子元素/选取父元素中唯一的子元素而且子元素没有兄弟元素<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(</span><span class="string">"ul li:only-child"</span>);  <span class="regexp">//</span>选取ul中只有一个li的元素</span><br><span class="line"></span><br><span class="line"><span class="variable">$(</span><span class="string">"ul li:only-of-type"</span>); <span class="regexp">//</span>选取ul中只有一个li子元素的元素</span><br></pre></td></tr></table></figure></p>
+<p>5、    :eq(n)   选取第n个元素<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"p:eq(3)"</span>)<span class="comment">// 选取索引为3的P元素</span></span><br></pre></td></tr></table></figure></p>
+<p>6、:even/:odd   选取索引为偶数/奇数的元素<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"p:even"</span>) <span class="comment">//选取索引为偶数的P元素</span></span><br><span class="line">$(<span class="string">"p:odd"</span>) <span class="comment">//选取索引为奇数的P元素</span></span><br></pre></td></tr></table></figure></p>
+<p>7、    :gt(n)/:lt(n)   选取索引大于/小于n的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"p:gt(10)"</span>) <span class="comment">//选取索引大于10 的P元素</span></span><br><span class="line">$(<span class="string">"p:lt(10)"</span>) <span class="comment">//选取索引小于10 的P元素</span></span><br></pre></td></tr></table></figure>
+<p>8、    :not(selector)   选取不匹配selector的元素</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"p:not(.test)"</span>) <span class="regexp">//</span>选取<span class="class"><span class="keyword">class</span>属性不是“<span class="title">test</span>”的<span class="title">P</span>元素</span></span><br></pre></td></tr></table></figure>
+<p>9、    :header   选取文档中所有的标题元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">":header"</span>) <span class="comment">//选取文档中所有的标题元素</span></span><br></pre></td></tr></table></figure>
+<p>10、    :focus  选取当前获取焦点的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">":focus"</span>)  <span class="comment">//选取当前获取焦点的元素</span></span><br></pre></td></tr></table></figure>
+<p>11、    :animated  选取所有正在执行动画效果的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div:animated"</span>)  <span class="comment">//选取当前正在执行动画的div元素</span></span><br></pre></td></tr></table></figure>
+<p>B：    内容过滤</p>
+<p>1、    :contains(text)  选取包含给定文本的元素<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div:contains('jinlin')"</span>)  <span class="comment">//选取所有中包含“jinlin”的div元素</span></span><br></pre></td></tr></table></figure></p>
+<p>2、    :empty  选取不包含任何子元素或者文本的空元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"td:empty"</span>)  <span class="comment">//选取所有不包含子元素或者文本的</span></span><br></pre></td></tr></table></figure>
+<p>3、    :parent  选取含有子元素或者文本的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div:parent"</span>)  <span class="comment">//选取文档中所有有子元素或者文本的div元素</span></span><br></pre></td></tr></table></figure>
+<p>4、    :root  选取该文档的根元素，在HTML中，文档的根元素，永远是html</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">":root"</span>) <span class="comment">//选取整个文档的根元素</span></span><br></pre></td></tr></table></figure>
+<p>5、:has(selector)  //选取所有含有选择器所匹配的元素的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div:has(p)"</span>)  <span class="comment">//选取所有含有P元素的div</span></span><br></pre></td></tr></table></figure>
+<p>C:    可见性过滤</p>
+<p>1、    :hidden  选取所有不可见或者type为hidden的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"input:hidden"</span>)  <span class="comment">//选取所有type为hidden的元素</span></span><br><span class="line">$(<span class="string">"div:hidden"</span>)  <span class="comment">//选取所有隐藏的div</span></span><br></pre></td></tr></table></figure>
+<p>2、    :visible选取所有可见</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div:visible"</span>)  <span class="comment">//选取所有可见的div</span></span><br></pre></td></tr></table></figure>
+<p>D:    属性过滤</p>
+<p>1、    [attribute]  选取包含给定属性的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div[id]"</span>)  <span class="comment">//选取所有包含id属性的div</span></span><br></pre></td></tr></table></figure>
+<p>2、    [attribute=value]/ [attribute!=value]  选取包含给定属性的值为/不为value的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div[class='test']"</span>)  <span class="comment">//选取所有class属性值为test的div元素</span></span><br><span class="line">$(<span class="string">"div[id!='test']"</span>)  <span class="comment">//选取所有id属性值不为test的div元素</span></span><br></pre></td></tr></table></figure>
+<p>3、    [attribute^=value]/[attribute$=value]  选取以value为开头/结尾的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div[title^='text']"</span>)  <span class="comment">//选取title属性以text开头的div元素</span></span><br><span class="line">$(<span class="string">"div[title$='text']"</span>)  <span class="comment">//选取title属性以text结尾的div元素</span></span><br></pre></td></tr></table></figure>
+<p>4、    [attribute*=value]  选取属性中包含value的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div[titile*='text']"</span>)  <span class="comment">//选取所有title中包含有“text”的div</span></span><br></pre></td></tr></table></figure>
+<p>5、    [attribute=value] [attribute=value]  选取同时满足多个属性选择器条件的元素</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$("input[<span class="link_label">id</span>][<span class="link_reference">name='name'</span>]")  //选取有ID属性并且name属性值为“name”的input元素</span><br></pre></td></tr></table></figure>
+<p>E:     表单过滤</p>
+<p>1、    :input  选取所有input元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">":input"</span>)  <span class="comment">//选取所有input元素（包括input、textarea、select、button）</span></span><br></pre></td></tr></table></figure>
+<p>2、    :text/:password  选取所有的单行文本框/密码框</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">":text"</span>)  <span class="comment">//选取所有的单行文本框</span></span><br><span class="line">$(<span class="string">"password"</span>)   <span class="comment">//选取所有的密码框</span></span><br></pre></td></tr></table></figure>
+<p>3、    :radio/:checkbox  选取所有的单选框/复选框</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">":radio"</span>)  <span class="comment">//选取所有的单选框</span></span><br><span class="line">$(<span class="string">":checkbox"</span>)  <span class="comment">//选取所有的复选框</span></span><br></pre></td></tr></table></figure>
+<p>4、:image  选取所有的图像按钮</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">":image"</span>)  <span class="comment">//选取所有的图像按钮</span></span><br></pre></td></tr></table></figure>
+<p>5、    :reset/:submit   选取所有的重置/提交按钮</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">":reset"</span>)  <span class="comment">//选取所有的重置按钮</span></span><br><span class="line">$(<span class="string">":submit"</span>)  <span class="comment">///选取所有的提交按钮</span></span><br></pre></td></tr></table></figure>
+<p>6、    :button  选取所有的按钮</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">":button"</span>)  <span class="comment">//选取所有的按钮</span></span><br></pre></td></tr></table></figure>
+<p>7、    :file   选取所有的上传控件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">":file"</span>)  <span class="comment">//选取所有的上传控件</span></span><br></pre></td></tr></table></figure>
+<p>8、    :hidden  选取所有的不可见元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">":hidden"</span>)  <span class="comment">//选取所有的不可见元素</span></span><br></pre></td></tr></table></figure>
+<p><strong>JS选择器</strong></p>
+<p>JS选择器常用的有getElementById()、getElementsByName()、getElementsByTagName()、getElementsByClassName()、querySelector()、querySelectorAll()</p>
+<p>A：    getElementById(ID):  返回对指定ID的第一个对象的引用，如果在文档中查找一个特定的元素，最有效的方法是getElementById()，语法格式为：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oElement = <span class="built_in">document</span>. getElementById (ID);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x=<span class="built_in">document</span>. getElementById(<span class="string">"text"</span>)  <span class="comment">//在文档中查找到id属性值为text的元素，x得到的是一个对象[object]，不是一个具体的值</span></span><br></pre></td></tr></table></figure>
+<p>但是getElementById()在IE6/7下有可能执行的结果是不同的，在ie6/7中，getElementById(idvalue)同时查询id、name两个值，返回的结果是第一个name或者id等于idvalue的对象，并不是仅按照id来查找的</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">input type=<span class="string">"text"</span> name=<span class="string">"test1"</span> id=<span class="string">"test"</span> <span class="keyword">value</span>=<span class="string">"测试1"</span> /&gt;</span><br><span class="line">&lt;input type=<span class="string">"text"</span> name=<span class="string">"test2"</span> id=<span class="string">"test1"</span>  <span class="keyword">value</span>=<span class="string">"测试2"</span> /&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">2var <span class="variable">$test</span> = document.getElementById(<span class="string">"test1"</span>).<span class="keyword">value</span>;</span><br><span class="line">2alert(<span class="variable">$test</span>);  //在ie6/<span class="number">7</span>下输出的结果是“测试<span class="number">1</span>”</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>可以通过以下方法确定确定通过id获取到</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getElementById = <span class="function"><span class="keyword">function</span>(<span class="params">ids</span>)</span>&#123;</span><br><span class="line">2<span class="keyword">var</span> idvalue = <span class="built_in">document</span>.getElementById(ids);</span><br><span class="line">22<span class="keyword">if</span>(idvalue.id === ids)&#123;</span><br><span class="line">222<span class="keyword">return</span> idvalue;</span><br><span class="line">22&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">222<span class="keyword">var</span> node = <span class="built_in">document</span>.all[id];</span><br><span class="line">222<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>,len=node.length;i&lt;len;i++)&#123;</span><br><span class="line">2222<span class="keyword">if</span>(node[i].id===id)</span><br><span class="line">22222<span class="keyword">return</span> node[i];</span><br><span class="line">222&#125;</span><br><span class="line">22&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>B:     getElementsByName(name):  返回文档中name属性为name值的元素，因为name属性值不是唯一的，所以查询到的结果有可能返回的是一个数组，而不是一个元素。语法格式为:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">oElement = document. getElementsByName (name);</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"myInput"</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">size</span>=<span class="value">"20"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"myInput"</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">size</span>=<span class="value">"20"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"myInput"</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">size</span>=<span class="value">"20"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">2<span class="keyword">var</span> x=<span class="built_in">document</span>.getElementsByName(<span class="string">"myInput"</span>);</span><br><span class="line">2alert(x.length); <span class="comment">//输入的结果为3</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>getElementsByName(name)在旧版浏览器中不支持除input之外的标签</p>
+<p>C:    getElementsByTagName(tagname):  返回文档中指定标签的元素，语法格式为：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">oElement = document. getElementsByTagName (tagname);</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"myInput"</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">size</span>=<span class="value">"20"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"myInput"</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">size</span>=<span class="value">"20"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"myInput"</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">size</span>=<span class="value">"20"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">2<span class="keyword">var</span> x=<span class="built_in">document</span>.getElementsByTagName(<span class="string">"input"</span>);</span><br><span class="line">2alert(x.length); <span class="comment">//输入的结果为3</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>D: getElementsByClassName():返回文档中所有指定类名的元素，语法格式为:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">oElement = document. getElementsByClassName (classname);</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"example"</span>&gt;</span>第一个<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"example color"</span>&gt;</span>第二个<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">2<span class="keyword">var</span> x=<span class="built_in">document</span>.getElementsByClassName(<span class="string">"example"</span>);</span><br><span class="line">2alert(x.length); <span class="comment">//输入的结果为2</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>E:    querySelector():返回文档中匹配指定css选择器的第一个元素，语法格式为:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oElement = <span class="built_in">document</span>. <span class="built_in">querySelector</span>(css selector);</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.<span class="built_in">querySelector</span>(“p”)  <span class="comment">//返回文档中第一个P元素</span></span><br></pre></td></tr></table></figure>
+<p>F:    querySelectorAll():返回文档中匹配指定css选择器的第一个元素，语法格式为:<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">oElement = <span class="built_in">document</span>. <span class="built_in">querySelectorAll</span>(css selector);</span><br><span class="line"><span class="built_in">document</span>.<span class="built_in">querySelectorAll</span>(<span class="string">".test"</span>)<span class="comment">//返回文档中所有class值为test元素;</span></span><br></pre></td></tr></table></figure></p>
+<p>（原生的JS选择速度相比较之下会快于同等条件下的JQuery选择器）</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jquery/" rel="tag">#jquery</a>
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+            <a href="/tags/选择器/" rel="tag">#选择器</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/02/JavaScript中的对象/" rel="next" title="JavaScript中的本地对象、内置对象、宿主对象">
+                <i class="fa fa-chevron-left"></i> JavaScript中的本地对象、内置对象、宿主对象
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/09/10/安装spm时phantomjs安装失败的解决方案/" rel="prev" title="安装spm时phantomjs安装失败的解决方案">
+                安装spm时phantomjs安装失败的解决方案 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/09/05/jQuery选择器和JS选择器/"
+     data-title="jQuery选择器和JS选择器"
+     data-content=""
+     data-url="http://yanyuans.com/2015/09/05/jQuery选择器和JS选择器/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/09/05/jQuery选择器和JS选择器/"
+           data-title="jQuery选择器和JS选择器" data-url="http://yanyuans.com/2015/09/05/jQuery选择器和JS选择器/">
+      </div>
+    
+  </div>
+
+
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="shadow" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">shadow</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/shadow-yan" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/shadow_yany" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> Twitter
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/p/1005053810592205/home?from=page_100505&mod=TAB#place" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">友情链接</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://nej.netease.com/" target="_blank">网易前端</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://taobaofed.org/" target="_blank">淘宝前端</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.alloyteam.com/" target="_blank">腾讯前端</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://fex.baidu.com/" target="_blank">百度前端研发部</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.75team.com/" target="_blank">奇舞团</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.baidu.com/link?url=I2wDoza40TSN60WsK-EPY1O8AaxXHopIDoIV33X4I36OgB2ZJ5tJipUzeG6peGGX&wd=&eqid=c47420bd000083fa0000000256233b93" target="_blank">伯乐在线</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.doyoe.com/" target="_blank">css探索之旅</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://jquery.cuishifeng.cn/" target="_blank">jQuery在线文档</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.w3ctech.com/" target="_blank">w3ctech前端社区</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shadow</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yanyuans"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

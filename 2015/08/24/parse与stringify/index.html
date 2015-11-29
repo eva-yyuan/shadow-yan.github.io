@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="心情," />
+  <meta name="keywords" content="JSON,parse,stringify," />
 
 
 
@@ -51,19 +51,19 @@
 
 
 
-<meta name="description" content="今天是网站备案成功的第一天，从上个月中旬开始，就一直在想着什么时候能够通过审核，用“望眼欲穿”来形容一点儿都不为过。不过，当看到审核通过的信息时，那股子的冲劲也随着时间的冲淡慢慢的沉淀消去
-写这篇文章的时候，我正盘着腿，看着书，玩着电脑，带着压力在心中沉淀的那股子郁闷中进行的，写文章也是发泄的一种形式。">
+<meta name="description" content="JSON.parse():将JavaScript对象表示法（JSON）字符串转换为对象（不允许以逗号结束），格式为：1234JSON.parse(string[,reviver])//string:必需的，要进行解析的有效的JSON字符串//reviver：可选，用来转换解析出的属性值的函数//返回值为一个从string字符串中解析出的对象或者数组
+一个简单的实例如下：1234var str =">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2015年7月某天的状态">
-<meta property="og:url" content="http://yanyuans.com/2015/07/06/mood1/index.html">
+<meta property="og:title" content="JSON.parse()与JSON.stringify()  （浏览器兼容性：IE8以上、Chrome、Firefox3.5、Opera10.5、Safari4.0）">
+<meta property="og:url" content="http://yanyuans.com/2015/08/24/parse与stringify/index.html">
 <meta property="og:site_name" content="学习笔记-生活随笔">
-<meta property="og:description" content="今天是网站备案成功的第一天，从上个月中旬开始，就一直在想着什么时候能够通过审核，用“望眼欲穿”来形容一点儿都不为过。不过，当看到审核通过的信息时，那股子的冲劲也随着时间的冲淡慢慢的沉淀消去
-写这篇文章的时候，我正盘着腿，看着书，玩着电脑，带着压力在心中沉淀的那股子郁闷中进行的，写文章也是发泄的一种形式。">
-<meta property="og:updated_time" content="2015-11-29T05:06:26.150Z">
+<meta property="og:description" content="JSON.parse():将JavaScript对象表示法（JSON）字符串转换为对象（不允许以逗号结束），格式为：1234JSON.parse(string[,reviver])//string:必需的，要进行解析的有效的JSON字符串//reviver：可选，用来转换解析出的属性值的函数//返回值为一个从string字符串中解析出的对象或者数组
+一个简单的实例如下：1234var str =">
+<meta property="og:updated_time" content="2015-11-29T05:04:27.389Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2015年7月某天的状态">
-<meta name="twitter:description" content="今天是网站备案成功的第一天，从上个月中旬开始，就一直在想着什么时候能够通过审核，用“望眼欲穿”来形容一点儿都不为过。不过，当看到审核通过的信息时，那股子的冲劲也随着时间的冲淡慢慢的沉淀消去
-写这篇文章的时候，我正盘着腿，看着书，玩着电脑，带着压力在心中沉淀的那股子郁闷中进行的，写文章也是发泄的一种形式。">
+<meta name="twitter:title" content="JSON.parse()与JSON.stringify()  （浏览器兼容性：IE8以上、Chrome、Firefox3.5、Opera10.5、Safari4.0）">
+<meta name="twitter:description" content="JSON.parse():将JavaScript对象表示法（JSON）字符串转换为对象（不允许以逗号结束），格式为：1234JSON.parse(string[,reviver])//string:必需的，要进行解析的有效的JSON字符串//reviver：可选，用来转换解析出的属性值的函数//返回值为一个从string字符串中解析出的对象或者数组
+一个简单的实例如下：1234var str =">
 
 
 
@@ -75,7 +75,7 @@
   };
 </script>
 
-  <title> 2015年7月某天的状态 | 学习笔记-生活随笔 </title>
+  <title> JSON.parse()与JSON.stringify()  （浏览器兼容性：IE8以上、Chrome、Firefox3.5、Opera10.5、Safari4.0） | 学习笔记-生活随笔 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -235,7 +235,7 @@
             
             
               
-                2015年7月某天的状态
+                JSON.parse()与JSON.stringify()  （浏览器兼容性：IE8以上、Chrome、Firefox3.5、Opera10.5、Safari4.0）
               
             
           </h1>
@@ -244,8 +244,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-07-06T21:29:45+08:00" content="2015-07-06">
-              2015-07-06
+            <time itemprop="dateCreated" datetime="2015-08-24T11:50:58+08:00" content="2015-08-24">
+              2015-08-24
             </time>
           </span>
 
@@ -254,8 +254,20 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/JSON/" itemprop="url" rel="index">
+                    <span itemprop="name">JSON</span>
                   </a>
                 </span>
 
@@ -270,8 +282,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/07/06/mood1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/06/mood1/" itemprop="commentsCount"></span>
+                <a href="/2015/08/24/parse与stringify/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/24/parse与stringify/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -290,9 +302,27 @@
       
 
       
-        <span itemprop="articleBody"><p>今天是网站备案成功的第一天，从上个月中旬开始，就一直在想着什么时候能够通过审核，用“望眼欲穿”来形容一点儿都不为过。不过，当看到审核通过的信息时，那股子的冲劲也随着时间的冲淡慢慢的沉淀消去</p>
-<p>写这篇文章的时候，我正盘着腿，看着书，玩着电脑，带着压力在心中沉淀的那股子郁闷中进行的，写文章也是发泄的一种形式。<br><a id="more"></a><br>2015年已经过去了一半，目标只是在以龟速进行着。对自己有些小小的失望，体重的目标还是没达到，技术还是不过关，对象还没有，家中盖房子补贴，所有的事情都集中在了这个不上不下的年纪，已经想象得到今年回去后的悲惨。不过还是不想将就，将就了一辈子，委屈自己一辈子，何必呢，现在一个人虽然有些寂寞，不过可以享受自我，干嘛赶鸭子一样的把自己摆在地摊上，供人挑选，这和物品有什么区别，只是一个有思想，一个是无意识。</p>
-<p>给自己的目标，在年终之前完成，过年之后，会有大的变动，为了那个变动，自己得加把劲儿，加油吧，2015………………</p>
+        <span itemprop="articleBody"><p>JSON.parse():将JavaScript对象表示法（JSON）字符串转换为对象（不允许以逗号结束），格式为：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JSON.<span class="function"><span class="title">parse</span><span class="params">(string[,reviver])</span></span></span><br><span class="line"><span class="comment">//string:必需的，要进行解析的有效的JSON字符串</span></span><br><span class="line"><span class="comment">//reviver：可选，用来转换解析出的属性值的函数</span></span><br><span class="line"><span class="comment">//返回值为一个从string字符串中解析出的对象或者数组</span></span><br></pre></td></tr></table></figure></p>
+<p>一个简单的实例如下：<br><figure class="highlight golo"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = '&#123;<span class="string">"name"</span>:<span class="string">"user"</span>,<span class="string">"password"</span>:<span class="string">"psd"</span>,<span class="string">"sex"</span>:<span class="string">"man"</span>,<span class="string">"age"</span>:<span class="string">"120"</span>&#125;';</span><br><span class="line"><span class="keyword">var</span> parse_str = JSON.parse(str);</span><br><span class="line">console.log(parse_str);  </span><br><span class="line">//Object &#123;name: <span class="string">"user"</span>, password: <span class="string">"psd"</span>, sex: <span class="string">"man"</span>, age: <span class="string">"120"</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'[1,2,3,4]'</span>;</span><br><span class="line"><span class="keyword">var</span> parse_str = <span class="built_in">JSON</span>.parse(str);</span><br><span class="line"><span class="built_in">console</span>.log(parse_str);</span><br><span class="line"><span class="comment">//[1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>在reviver函数指定的情况下，解析出的JavaScript值（解析值）会经过一次转换后才将最终返回。具体来说就是：解析值本身以及它所包含的所有属性，会按照一定的顺序（从最最里层的属性开始，一级级往外，最终到达顶层）分别的去调用reviver函数，在调用过程中，当前属性所属的对象作为this值，当前的属性名以及属性值作为第一参数和第二参数传递到reviver中。如果reviver返回Undefined，则当前属性会从所属对象中删除，如果返回了其他值，则返回的值成为当前属性新的属性值。<br><figure class="highlight golo"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = '&#123;<span class="string">"name"</span>:<span class="string">"user"</span>,<span class="string">"password"</span>:<span class="string">"psd"</span>,<span class="string">"sex"</span>:<span class="string">"man"</span>,<span class="string">"age"</span>:<span class="string">"120"</span>&#125;';</span><br><span class="line"><span class="keyword">var</span> parse_str = JSON.parse(str,<span class="keyword">function</span>(k,v)&#123;</span><br><span class="line">2<span class="keyword">return</span> v + <span class="string">"_test"</span>;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(parse_str);</span><br><span class="line"></span><br><span class="line">///Object &#123;name: <span class="string">"user_test"</span>, password: <span class="string">"psd_test"</span>, sex: <span class="string">"man_test"</span>, age: <span class="string">"120_test"</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>JSON.stringify():将任意的JavaScript值序列化成JSON字符串,语法为：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSON.<span class="function"><span class="title">stringify</span><span class="params">(value[,replacer[,space]])</span></span></span><br></pre></td></tr></table></figure>
+<p>一个简单的实例如下：<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">var</span> <span class="keyword">str </span>= &#123;<span class="string">"name"</span>:<span class="string">"user"</span>,<span class="string">"password"</span>:<span class="string">"psd"</span>,<span class="string">"sex"</span>:<span class="string">"man"</span>,<span class="string">"age"</span>:<span class="string">"120"</span>&#125;<span class="comment">;</span></span><br><span class="line"><span class="label">var</span> parse_str = JSON.<span class="keyword">stringify(str);</span><br><span class="line"></span><span class="label">console.log</span>(parse_str)<span class="comment">;</span></span><br><span class="line">///&#123;<span class="string">"name"</span>:<span class="string">"user"</span>,<span class="string">"password"</span>:<span class="string">"psd"</span>,<span class="string">"sex"</span>:<span class="string">"man"</span>,<span class="string">"age"</span>:<span class="string">"120"</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Value:必需的 将要序列化成JSON字符串的值</p>
+<p>Replacer:可选的<br>如果该参数是一个<strong>函数</strong>，则在序列化过程中，被序列化的值的每个值都会经过该函数的转换和处理，该函数的返回值会影响正在被字符串化的键值对会不会被加入最终生成的JSON字符串中化，如下：<br>1、如果返回一个Number类型的值，则该数字会通过toString方法转换成字符串，来作为正在被字符串化的键值对中的值被添加到JSON字符串中</p>
+<p>2、如果返回一个String类型的值，则该字符串会作为正在被字符串化的键值对中的值被添加到JSON字符串中</p>
+<p>3、如果返回一个Boolean类型的值，则该布尔值会转化成字符串“true”或“false” 作为正在被字符串化的键值对中的值被添加到JSON字符串中</p>
+<p>4、如果返回一个其他类型的对象，则该对象的键值对会被递归的按照上述的规则添加到JSON字符串中，但如果该对象是function类型的，则它不会变遍历，replacer函数会转而处理下一个键值对</p>
+<p>5、如果返回Undefined，则该键值对不会被添加到JSON字符串中<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="number">123</span>;</span><br><span class="line"><span class="keyword">var</span> parse_str = <span class="built_in">JSON</span>.stringify(str,<span class="function"><span class="keyword">function</span>(<span class="params">k,v</span>)</span>&#123;</span><br><span class="line">2<span class="keyword">return</span> v*<span class="number">3</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> parse_str);<span class="comment">///string</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight golo"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = &#123;<span class="string">"name"</span>:<span class="string">"user"</span>,<span class="string">"password"</span>:<span class="string">"psd"</span>,<span class="string">"sex"</span>:<span class="string">"man"</span>,<span class="string">"age"</span>:<span class="number">120</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> parse_str = JSON.stringify(str,<span class="keyword">function</span>(k,v)&#123;</span><br><span class="line">2<span class="keyword">if</span>(typeof(v) === <span class="string">"string"</span>)</span><br><span class="line">22<span class="keyword">return</span> v + <span class="string">"_test"</span>;</span><br><span class="line">2<span class="keyword">return</span> v;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(parse_str);</span><br><span class="line">//&#123;<span class="string">"name"</span>:<span class="string">"user_test"</span>,<span class="string">"password"</span>:<span class="string">"psd_test"</span>,<span class="string">"sex"</span>:<span class="string">"man_test"</span>,<span class="string">"age"</span>:<span class="number">120</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>如果该参数是一个<strong>数组</strong>，则只有包含在这个数组中的属性名才会被序列化到最终的JSON字符串中</p>
+<p>Space参数：用来控制结果字符串里面的间距</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = &#123;<span class="string">"name"</span>:<span class="string">"user"</span>,<span class="string">"password"</span>:<span class="string">"psd"</span>,<span class="string">"sex"</span>:<span class="string">"man"</span>,<span class="string">"age"</span>:<span class="number">120</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> parse_str = <span class="built_in">JSON</span>.stringify(str,<span class="literal">null</span>,<span class="string">"\n"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(parse_str);</span><br><span class="line"></span><br><span class="line"><span class="comment">//&#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//"name": "user",</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//"password": "psd",</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//"sex": "man",</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//"age": 120</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify</a></p>
+</blockquote>
 </span>
       
     </div>
@@ -301,7 +331,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/心情/" rel="tag">#心情</a>
+            <a href="/tags/JSON/" rel="tag">#JSON</a>
+          
+            <a href="/tags/parse/" rel="tag">#parse</a>
+          
+            <a href="/tags/stringify/" rel="tag">#stringify</a>
           
         </div>
       
@@ -310,12 +344,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2015/08/14/事件处理/" rel="next" title="与事件处理相关的function：addEventListener、removeEventListener与attachEvent、detachEvent">
+                <i class="fa fa-chevron-left"></i> 与事件处理相关的function：addEventListener、removeEventListener与attachEvent、detachEvent
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/29/兼容ie6/" rel="prev" title="三列中间自适应排版兼容ie6">
-                三列中间自适应排版兼容ie6 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/09/02/JavaScript中的对象/" rel="prev" title="JavaScript中的本地对象、内置对象、宿主对象">
+                JavaScript中的本地对象、内置对象、宿主对象 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -331,10 +369,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/07/06/mood1/"
-     data-title="2015年7月某天的状态"
+        <div class="ds-share flat" data-thread-key="2015/08/24/parse与stringify/"
+     data-title="JSON.parse()与JSON.stringify()  （浏览器兼容性：IE8以上、Chrome、Firefox3.5、Opera10.5、Safari4.0）"
      data-content=""
-     data-url="http://yanyuans.com/2015/07/06/mood1/">
+     data-url="http://yanyuans.com/2015/08/24/parse与stringify/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -365,8 +403,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/07/06/mood1/"
-           data-title="2015年7月某天的状态" data-url="http://yanyuans.com/2015/07/06/mood1/">
+      <div class="ds-thread" data-thread-key="2015/08/24/parse与stringify/"
+           data-title="JSON.parse()与JSON.stringify()  （浏览器兼容性：IE8以上、Chrome、Firefox3.5、Opera10.5、Safari4.0）" data-url="http://yanyuans.com/2015/08/24/parse与stringify/">
       </div>
     
   </div>
