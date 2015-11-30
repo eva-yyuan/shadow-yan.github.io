@@ -961,7 +961,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b30fb1;
+  background: #ff26cf;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -1239,7 +1239,7 @@ body {
 .posts-expand .post-title-link {
   display: inline-block;
   position: relative;
-  color: #555;
+  color: #b81311;
   border-bottom: none;
   line-height: 1.2;
   vertical-align: top;
