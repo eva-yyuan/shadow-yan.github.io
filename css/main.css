@@ -961,7 +961,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff26cf;
+  background: #d2bff6;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -1251,7 +1251,7 @@ body {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #000;
+  background-color: #b81311;
   visibility: hidden;
   transform: scaleX(0);
   transition-duration: 0.2s;
@@ -2181,7 +2181,7 @@ ul li {
   color: #666;
   background: none;
   border: none;
-  border-bottom: 2px solid #666;
+  border-bottom: 1px solid #666;
   transition-property: border;
 }
 @media (max-width: 767px) {
