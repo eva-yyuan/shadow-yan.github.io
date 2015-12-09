@@ -961,7 +961,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0661cd;
+  background: #28590b;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -1918,6 +1918,7 @@ body {
 }
 .category-all-page .category-all {
   margin-top: 20px;
+  text-align: center;
 }
 .category-all-page .category-list {
   margin: 0;
