@@ -1,0 +1,875 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="一、window view properties(窗口属性)    innerWidth 和 innerHeight    outerWidth 和 outerHeight    pageXOffset 和 pageYOffset    screenX 和 screenY
+1、innerWidth、innerHeight window内部的宽度和高度，不包括菜单栏、工具栏以及滚动条等的宽度和高度">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS Object Model View相关整理">
+<meta property="og:url" content="http://blog.yanyuans.com/2015/10/24/CSSOM View Module相关整理/index.html">
+<meta property="og:site_name" content="学习笔记|生活随笔|">
+<meta property="og:description" content="一、window view properties(窗口属性)    innerWidth 和 innerHeight    outerWidth 和 outerHeight    pageXOffset 和 pageYOffset    screenX 和 screenY
+1、innerWidth、innerHeight window内部的宽度和高度，不包括菜单栏、工具栏以及滚动条等的宽度和高度">
+<meta property="og:image" content="http://img.blog.csdn.net/20151214224134026">
+<meta property="og:image" content="http://img.blog.csdn.net/20151214224134026">
+<meta property="og:image" content="http://img.blog.csdn.net/20151214224134026">
+<meta property="og:image" content="http://img.blog.csdn.net/20151214230654105">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215095216100">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215103001968">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215103001968">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215131942253">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215135458934">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215135458934">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215135458934">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215135458934">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215135458934">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215165612243">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215135458934">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215170846327">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215135458934">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215135458934">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215135458934">
+<meta property="og:image" content="http://img.blog.csdn.net/20151214224134026">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215135458934">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215224801895">
+<meta property="og:image" content="http://img.blog.csdn.net/20151215230547328">
+<meta property="og:updated_time" content="2015-12-15T15:09:53.741Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS Object Model View相关整理">
+<meta name="twitter:description" content="一、window view properties(窗口属性)    innerWidth 和 innerHeight    outerWidth 和 outerHeight    pageXOffset 和 pageYOffset    screenX 和 screenY
+1、innerWidth、innerHeight window内部的宽度和高度，不包括菜单栏、工具栏以及滚动条等的宽度和高度">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> CSS Object Model View相关整理 | 学习笔记|生活随笔| </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">
+<h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">随笔记录</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> 
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> 
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> 
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> 
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> 
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'DJNq8YshFgaxYGny_hL7','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS Object Model View相关整理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-24T20:18:28+08:00" content="2015-10-24">
+              2015-10-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js-jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">js/jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/24/CSSOM View Module相关整理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/24/CSSOM View Module相关整理/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p><strong>一、window view properties(窗口属性)</strong><br>    innerWidth 和 innerHeight<br>    outerWidth 和 outerHeight<br>    pageXOffset 和 pageYOffset<br>    screenX 和 screenY</p>
+<p>1、innerWidth、innerHeight window内部的宽度和高度，不包括菜单栏、工具栏以及滚动条等的宽度和高度  是只可读取属性 没有默认值 在不支持该属性的情况下输出undefined  <a id="more"></a></p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.innerWidth;</span><br><span class="line"><span class="built_in">window</span>.innerHeight;</span><br></pre></td></tr></table></figure>
+<p>浏览器兼容性如下：<br><img src="http://img.blog.csdn.net/20151214224134026" alt="这里写图片描述"></p>
+<p>2、outerWidth 和 outerHeight window整体的宽度和高度，包括菜单栏、工具栏以及滚动条等的宽度和高度  是只可读取属性 没有默认值 在不支持该属性的情况下输出undefined<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.outerWidth;</span><br><span class="line"><span class="built_in">window</span>.outerHeight;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器兼容性如下：<br><img src="http://img.blog.csdn.net/20151214224134026" alt="这里写图片描述"></p>
+<p>3、pageXOffset 和 pageYOffset 当前页面相对于窗口显示区左上角的 X 位置、Y位置 是只可读取属性 没有默认值 在不支持该属性的情况下输出undefined<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.pageXOffset;</span><br><span class="line"><span class="built_in">window</span>.pageYOffset;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器兼容性如下：<br><img src="http://img.blog.csdn.net/20151214224134026" alt="这里写图片描述"></p>
+<p>4、screenX 和 screenY  当前窗口相对于屏幕左上角的 X 位置、Y位置 在事件中, 当作为window属性的时候，是只读的，在不支持该属性的情况下输出undefined，在旧版本opera浏览器下无论窗口是全屏显示还是窗口缩小，显示出的结果都是0<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.screenX;</span><br><span class="line"><span class="built_in">window</span>.screenY;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器兼容性如下：<br><img src="http://img.blog.csdn.net/20151214230654105" alt="这里写图片描述"></p>
+<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">partial interface Window &#123;</span><br><span class="line">  ....</span><br><span class="line">  <span class="comment">// viewport</span></span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> innerWidth;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> innerHeight;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// viewport scrolling</span></span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> scrollX;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> pageXOffset;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> scrollY;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> pageYOffset;</span><br><span class="line">  <span class="keyword">void</span> scroll(<span class="keyword">double</span> x, <span class="keyword">double</span> y, optional ScrollOptions options);</span><br><span class="line">  <span class="keyword">void</span> scrollTo(<span class="keyword">double</span> x, <span class="keyword">double</span> y, optional ScrollOptions options);</span><br><span class="line">  <span class="keyword">void</span> scrollBy(<span class="keyword">double</span> x, <span class="keyword">double</span> y, optional ScrollOptions options);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// client</span></span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> screenX;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> screenY;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> outerWidth;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> outerHeight;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> devicePixelRatio;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>二、screen view properties(显示器属性)</strong><br>    width 和 height<br>    availWidth 和 availHeight<br>    colorDepth<br>    pixelDepth<br>1、width 和 height  显示器屏幕的宽度和高度   只可读取属性 没有默认值<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">screen</span><span class="class">.width</span>;</span><br><span class="line"><span class="tag">screen</span><span class="class">.height</span>;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器兼容性如下：<br><img src="http://img.blog.csdn.net/20151215095216100" alt="这里写图片描述">、</p>
+<p>2、availWidth 和 availHeight  显示器屏幕除去windows任务栏后的宽度和高度   只可读取属性 没有默认值<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">screen</span><span class="class">.availWidth</span> ;</span><br><span class="line"><span class="tag">screen</span><span class="class">.availHeight</span>  ;</span><br></pre></td></tr></table></figure></p>
+<p>3、colorDepth 显示器调色板的比特深度（颜色深度）   只可读取属性 w3c上规定返回值为24 (The colorDepth attribute must return 24)  不过ie8以下版本虽然支持该属性 不过返回值是32<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">screen</span><span class="class">.availWidth</span> ;</span><br><span class="line"><span class="tag">screen</span><span class="class">.availHeight</span>  ;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性:<br><img src="http://img.blog.csdn.net/20151215103001968" alt="这里写图片描述"></p>
+<p>4、pixelDepth 显示器调色板的比特深度（颜色深度）   只可读取属性 w3c上规定返回值为24 (The pixelDepth attribute must return 24)   没有默认值 在不支持该属性的情况下输出undefined<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">screen</span><span class="class">.availWidth</span> ;</span><br><span class="line"><span class="tag">screen</span><span class="class">.availHeight</span>  ;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性:<br><img src="http://img.blog.csdn.net/20151215103001968" alt="这里写图片描述"></p>
+<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">interface Screen &#123;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> availWidth;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> availHeight;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> width;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> height;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> unsigned long colorDepth;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> unsigned long pixelDepth;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>三、document view methods(文档视图方法)</strong><br>    elementFromPoint()</p>
+<p>1、elementFromPoint()  返回给定坐标所在的元素</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.elementFromPoint(<span class="number">300</span>, <span class="number">200</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="http://img.blog.csdn.net/20151215131942253" alt="这里写图片描述"></p>
+<p>虽然大部分浏览器支持，不过IE9+以及其他浏览器返回的是一段html代码，而ie8以及以下返回的是[object Object]</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">partial</span> <span class="keyword">interface</span> <span class="title">Document</span> &#123;</span><br><span class="line">  Element? elementFromPoint(<span class="keyword">double</span> x, <span class="keyword">double</span> y);</span><br><span class="line">  <span class="function">sequence&lt;Element&gt; <span class="title">elementsFromPoint</span>(<span class="params"><span class="keyword">double</span> x, <span class="keyword">double</span> y</span>)</span>;</span><br><span class="line">  CaretPosition? caretPositionFromPoint(<span class="keyword">double</span> x, <span class="keyword">double</span> y);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>四、element view properties(元素视图属性)</strong><br>    clientWidth 和 clientHeight<br>    clientLeft 和 clientTop<br>    offsetWidth 和 offsetHeigh<br>    offsetLeft 和 offsetTop<br>    offsetParent<br>    scrollWidth 和 scrollHeigh<br>    scrollLeft 和 scrollTop<br>1、clientWidth 和 clientHeight  元素可见的宽度和高度 （不包含边框和滚动条，但包含padding）<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'content'</span>).clientWidth;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'content'</span>).clientHeight;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性：<br><img src="http://img.blog.csdn.net/20151215135458934" alt="这里写图片描述"></p>
+<p>2、clientLeft 和 clientTop  元素内容（不包含边框和滚动条，但包含padding） 相对于元素左上角的宽度和高度<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'content'</span>).clientLeft;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'content'</span>).clientTop;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性：<br><img src="http://img.blog.csdn.net/20151215135458934" alt="这里写图片描述"></p>
+<p>3、offsetWidth 和 offsetHeight  元素的宽度和高度（包含边框和padding）<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'content'</span>).offsetWidth;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'content'</span>).offsetHeight;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性：<br><img src="http://img.blog.csdn.net/20151215135458934" alt="这里写图片描述"></p>
+<p>4、offsetLeft 和  offsetTop  相对于最近的祖先定位元素（CSS position 属性被设置为 relative、absolute 或 fixed 的元素）的左右偏移值<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'content'</span>).offsetLeft;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'content'</span>).offsetTop;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性：<br><img src="http://img.blog.csdn.net/20151215135458934" alt="这里写图片描述"></p>
+<p>5、offsetParent  第一个祖先定位元素（即用来计算offsetLeft和offsetTop的元素）<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.<span class="function"><span class="title">getElementById</span><span class="params">(<span class="string">'document-main'</span>)</span></span>.offsetParent</span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性：<br><img src="http://img.blog.csdn.net/20151215135458934" alt="这里写图片描述"></p>
+<p>6、scrollWidth 和 scrollHeight  元素的滚动条宽度和高度（包括隐藏的部分），如果元素没有隐藏的部分，则相关的值应该等用于clientWidth和clientHeight<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'content'</span>).scrollWidth;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'content'</span>).scrollHeight;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性：<br><img src="http://img.blog.csdn.net/20151215165612243" alt="这里写图片描述"></p>
+<p>7、scrollLeft 和 scrollTop  元素滚动的坐标值 可读写<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'content'</span>).scrollLeft;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'content'</span>).scrollTop;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性：<br><img src="http://img.blog.csdn.net/20151215135458934" alt="这里写图片描述"></p>
+<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">partial interface Element &#123;</span><br><span class="line">  ....</span><br><span class="line">  <span class="keyword">attribute</span> (<span class="keyword">double</span> or ScrollOptionsVertical) scrollTop;</span><br><span class="line">  <span class="keyword">attribute</span> (<span class="keyword">double</span> or ScrollOptionsHorizontal) scrollLeft;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> scrollWidth;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> scrollHeight;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> clientTop;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> clientLeft;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> clientWidth;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> clientHeight;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">partial interface HTMLElement &#123;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> Element? offsetParent;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> offsetTop;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> offsetLeft;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> offsetWidth;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> offsetHeight;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>五、element view methods(元素视图方法)</strong><br>    getClientRects()<br>    getBoundingClientRect()<br>    scrollIntoView()</p>
+<p>1、getClientRects()  元素占据页面的所有矩形区域  返回值为数组  inline box时有多少行即数组长度  其他的则是长度为1  数组中则是TextRectangle 对象 ：width、height、left、top、right、bottom</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.<span class="function"><span class="title">getElementById</span><span class="params">(<span class="string">'head'</span>)</span></span>.<span class="function"><span class="title">getClientRects</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p>浏览器支持性：<br><img src="http://img.blog.csdn.net/20151215170846327" alt="这里写图片描述"><br>IE6/7下的bug<br>getClientRects()方法是跟着line box模型走的，其返回的每个矩形区域其实就是一个line boxes，也就是一行文字内容。但是在IE6/7下把针对inline水平标签的方法应用到block水平的标签上了，如果block标签下则是返回文字的行数，而inline标签则返回文字字数</p>
+<p>2、getBoundingClientRect()  元素相对浏览器视窗的左，上，右和下位置，返回的是一个对象：width、height、left、top、right、bottom<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.<span class="function"><span class="title">getElementById</span><span class="params">(<span class="string">'head'</span>)</span></span>.<span class="function"><span class="title">getBoundingClientRect</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性：<br><img src="http://img.blog.csdn.net/20151215135458934" alt="这里写图片描述"></p>
+<p>3、scrollIntoView() 让元素滚动到可视区域<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.<span class="function"><span class="title">getElementById</span><span class="params">(<span class="string">'head'</span>)</span></span>.<span class="function"><span class="title">scrollIntoView</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性：<br><img src="http://img.blog.csdn.net/20151215135458934" alt="这里写图片描述"></p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">partial</span> <span class="keyword">interface</span> <span class="title">Element</span> &#123;</span><br><span class="line">  <span class="function">DOMRectList <span class="title">getClientRects</span>(<span class="params"></span>)</span>;</span><br><span class="line">  <span class="function">DOMRect <span class="title">getBoundingClientRect</span>(<span class="params"></span>)</span>;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">scrollIntoView</span>(<span class="params"></span>)</span>;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">scrollIntoView</span>(<span class="params">boolean top, optional ScrollOptions options</span>)</span>;</span><br><span class="line">  ……</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>六、mouse position(鼠标位置)</strong><br>    screenX 和 screenY<br>    pageX 和 pageY<br>    clientX 和 clientY<br>    x 和 y<br>    offsetX 和 offsetY</p>
+<p>1、screenX和screenY  鼠标相对屏幕显示器所在的位置<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">event</span>.screenX;</span><br><span class="line"><span class="keyword">event</span>.screenY;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性：<br><img src="http://img.blog.csdn.net/20151215135458934" alt="这里写图片描述"></p>
+<p>2、pageX和pageY 鼠标相对文档页面所在的位置   对于支持的浏览器，返回的就是由鼠标点击位置决定的数值，对于不支持的浏览器，得到的是undefined<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">event</span>.pageX;</span><br><span class="line"><span class="keyword">event</span>.pageY;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性：<br><img src="http://img.blog.csdn.net/20151214224134026" alt="这里写图片描述"></p>
+<p>3、clientX和clientY  鼠标相对于窗口的左上偏移值<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">event</span>.clientX;</span><br><span class="line"><span class="keyword">event</span>.clientY;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性：<br><img src="http://img.blog.csdn.net/20151215135458934" alt="这里写图片描述"></p>
+<p>4、x 和 y  鼠标相对于文档的左上偏移值<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">event</span>.x;</span><br><span class="line"><span class="keyword">event</span>.y;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性：<br><img src="http://img.blog.csdn.net/20151215224801895" alt="这里写图片描述"></p>
+<p>5、offsetX  和 offsetY  鼠标相对于当前被点击元素的左上偏移值  在IE7以及以下浏览器下，只有当当前目标元素为offsetParent时才计算坐标值，否则，它就会拿当前目标元素的offsetParent来计算，当发现元素应用了position: relative后，IE会去寻找下一个offsetParent来计算offsetY，但又不是offsetX<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">event</span>.offsetX;</span><br><span class="line"><span class="keyword">event</span>.offsetY;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性：<br><img src="http://img.blog.csdn.net/20151215230547328" alt="这里写图片描述"></p>
+<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">partial interface MouseEvent &#123;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> screenX;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> screenY;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> pageX;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> pageY;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> clientX;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> clientY;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> x;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> y;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> offsetX;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="keyword">attribute</span> <span class="keyword">double</span> offsetY;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>参考文献： <a href="http://www.w3.org/TR/2013/WD-cssom-view-20131217/" target="_blank" rel="external">http://www.w3.org/TR/2013/WD-cssom-view-20131217/</a><br>        <a href="http://www.zhangxinxu.com/wordpress/2011/09/cssom%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%BC%8Fcssom-view-module%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86%E4%B8%8E%E4%BB%8B%E7%BB%8D/" target="_blank" rel="external">http://www.zhangxinxu.com/wordpress/2011/09/cssom%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%BC%8Fcssom-view-module%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86%E4%B8%8E%E4%BB%8B%E7%BB%8D/</a></p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/11/文字特效/" rel="next" title="文字特效">
+                <i class="fa fa-chevron-left"></i> 文字特效
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/10/24/CSSOM View Module相关整理/"
+     data-title="CSS Object Model View相关整理"
+     data-content=""
+     data-url="http://blog.yanyuans.com/2015/10/24/CSSOM View Module相关整理/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/10/24/CSSOM View Module相关整理/"
+           data-title="CSS Object Model View相关整理" data-url="http://blog.yanyuans.com/2015/10/24/CSSOM View Module相关整理/">
+      </div>
+    
+  </div>
+
+
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="shadow" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">shadow</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/shadow-yan" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/shadow_yany" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> Twitter
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/p/1005053810592205/home?from=page_100505&mod=TAB#place" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">友情链接</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://nej.netease.com/" target="_blank">网易前端</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://taobaofed.org/" target="_blank">淘宝前端</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.alloyteam.com/" target="_blank">腾讯前端</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://fex.baidu.com/" target="_blank">百度前端研发部</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.75team.com/" target="_blank">奇舞团</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.baidu.com/link?url=I2wDoza40TSN60WsK-EPY1O8AaxXHopIDoIV33X4I36OgB2ZJ5tJipUzeG6peGGX&wd=&eqid=c47420bd000083fa0000000256233b93" target="_blank">伯乐在线</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.doyoe.com/" target="_blank">css探索之旅</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://jquery.cuishifeng.cn/" target="_blank">jQuery在线文档</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.w3ctech.com/" target="_blank">w3ctech前端社区</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shadow</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yanyuans"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

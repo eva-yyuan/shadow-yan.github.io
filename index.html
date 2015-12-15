@@ -238,6 +238,110 @@
             
               
                 
+                <a class="post-title-link" href="/2015/10/24/CSSOM View Module相关整理/" itemprop="url">
+                  CSS Object Model View相关整理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-24T20:18:28+08:00" content="2015-10-24">
+              2015-10-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js-jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">js/jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/24/CSSOM View Module相关整理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/24/CSSOM View Module相关整理/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p><strong>一、window view properties(窗口属性)</strong><br>    innerWidth 和 innerHeight<br>    outerWidth 和 outerHeight<br>    pageXOffset 和 pageYOffset<br>    screenX 和 screenY</p>
+<p>1、innerWidth、innerHeight window内部的宽度和高度，不包括菜单栏、工具栏以及滚动条等的宽度和高度  是只可读取属性 没有默认值 在不支持该属性的情况下输出undefined
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/24/CSSOM View Module相关整理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/10/11/文字特效/" itemprop="url">
                   文字特效
                 </a>
@@ -760,111 +864,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/08/24/parse与stringify/" itemprop="url">
-                  JSON.parse()与JSON.stringify()  （浏览器兼容性：IE8以上、Chrome、Firefox3.5、Opera10.5、Safari4.0）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-08-24T11:50:58+08:00" content="2015-08-24">
-              2015-08-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/js-jQuery/" itemprop="url" rel="index">
-                    <span itemprop="name">js/jQuery</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/08/24/parse与stringify/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/24/parse与stringify/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>JSON.parse():将JavaScript对象表示法（JSON）字符串转换为对象（不允许以逗号结束），格式为：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JSON.<span class="function"><span class="title">parse</span><span class="params">(string[,reviver])</span></span></span><br><span class="line"><span class="comment">//string:必需的，要进行解析的有效的JSON字符串</span></span><br><span class="line"><span class="comment">//reviver：可选，用来转换解析出的属性值的函数</span></span><br><span class="line"><span class="comment">//返回值为一个从string字符串中解析出的对象或者数组</span></span><br></pre></td></tr></table></figure></p>
-<p>一个简单的实例如下：<br><figure class="highlight golo"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = '&#123;<span class="string">"name"</span>:<span class="string">"user"</span>,<span class="string">"password"</span>:<span class="string">"psd"</span>,<span class="string">"sex"</span>:<span class="string">"man"</span>,<span class="string">"age"</span>:<span class="string">"120"</span>&#125;';</span><br><span class="line"><span class="keyword">var</span> parse_str = JSON.parse(str);</span><br><span class="line">console.log(parse_str);  </span><br><span class="line">//Object &#123;name: <span class="string">"user"</span>, password: <span class="string">"psd"</span>, sex: <span class="string">"man"</span>, age: <span class="string">"120"</span>&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'[1,2,3,4]'</span>;</span><br><span class="line"><span class="keyword">var</span> parse_str = <span class="built_in">JSON</span>.parse(str);</span><br><span class="line"><span class="built_in">console</span>.log(parse_str);</span><br><span class="line"><span class="comment">//[1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/08/24/parse与stringify/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -913,7 +912,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
