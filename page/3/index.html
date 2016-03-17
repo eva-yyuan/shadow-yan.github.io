@@ -215,11 +215,112 @@
 
     
     
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/08/08/CSS选择器整理/" itemprop="url">
+                  CSS选择器整理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-08-08T11:44:39+08:00" content="2015-08-08">
+              2015-08-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/html-css/" itemprop="url" rel="index">
+                    <span itemprop="name">html/css</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/08/08/CSS选择器整理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/08/CSS选择器整理/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
       
       
 
       
-    
+        
+          <p><strong>1、    常用选择器</strong></p>
+<p>a)    元素选择器（简单选择器/类型选择器）：匹配特定标签的元素，格式为 标签 { …样式…}，例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">   <span class="tag">p</span><span class="rules">&#123;<span class="rule"><span class="attribute">color</span>:<span class="value">red</span></span>;&#125;</span></span><br><span class="line"><span class="tag">h1</span><span class="rules">&#123;<span class="rule"><span class="attribute">font-weight</span>:<span class="value">bold</span></span>;&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>b)    后代选择器：匹配特定元素或者元素组的后代，格式为 标签 后代{ …样式…}，例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">div</span> <span class="tag">p</span><span class="rules">&#123;<span class="rule"><span class="attribute">color</span>:<span class="value">red:</span></span></span>&#125;</span><br><span class="line"><span class="tag">ul</span> <span class="tag">li</span><span class="rules">&#123;<span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>c)    ID选择器：匹配特定ID的元素，格式为 #ID{ …样式…}，例如:
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/08/08/CSS选择器整理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -325,6 +426,437 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/08/04/怪异模式和标准模式/" itemprop="url">
+                  doctype怪异模式和标准模式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-08-04T11:42:53+08:00" content="2015-08-04">
+              2015-08-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/html-css/" itemprop="url" rel="index">
+                    <span itemprop="name">html/css</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/08/04/怪异模式和标准模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/04/怪异模式和标准模式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p><strong>1、Doctype？</strong><br>    Doctype是一种标准通用的文档类型声明，它必须出现在文件的第一行，目的是告诉浏览器使用什么样的文档类型定义（DTD）来解析文档。</p>
+<p>它不是HTML标签，它是指示web浏览器文档关于页面使用哪个HTML版本规范进行编写的指令。<br>    在HTML 4.0.1，Doctype中有三个不同的文档类型，它的声明格式为&lt;!DOCTYPE html PUBLIC “引用的字符串”  –公共标识符–&gt;<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</span> //strict </span><br><span class="line"><span class="doctype">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</span> //transitional</span><br><span class="line"><span class="doctype">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd"&gt;</span>// frameset</span><br></pre></td></tr></table></figure></p>
+<pre><code>HTML4<span class="number">.0</span><span class="number">.1</span>是基于SGML，因此Doctype需要对DTD进行引用，儿而HTML5不基于SGML，因此不需要对DTD进行引用，但是也需要Doctype来规范浏览器的行为（让浏览器按照它们应该的方式来运行）。
+</code></pre><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span> //是不是很简单</span><br></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/08/04/怪异模式和标准模式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/08/01/jQuery中html-val-text/" itemprop="url">
+                  jQuery中html()、val()、text()的区别; javascript中innerHTMl、innerText、outHTML的区别
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-08-01T11:41:04+08:00" content="2015-08-01">
+              2015-08-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js-jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">js/jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/08/01/jQuery中html-val-text/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/01/jQuery中html-val-text/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>今天在使用javascript时，用到了value值，忽然想到了jQuery中的html()、val()和text()，就查看了一下参考资料，整理下他们之间的差异，方便以后查看。</p>
+<p>1.val():用来读取或者设置修改匹配的value值。(如果是select的多选项，则返回相匹配的数组)</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(</span><span class="string">"#input1"</span>).val();<span class="regexp">//</span>获取value值</span><br><span class="line"><span class="variable">$(</span><span class="string">"#input1"</span>).val(<span class="string">"Single2"</span>); <span class="regexp">//</span>设置value值</span><br><span class="line"><span class="variable">$(</span><span class="string">"#select1"</span>).val();<span class="regexp">//test</span>1,test2</span><br></pre></td></tr></table></figure>
+<p>2.text():用来读取或者设置匹配元素的文本内容，（如果元素中包含元素，则只会读取该元素的文本内容，不会读取标签，这是和html()最大的区别）<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(</span><span class="string">"p"</span>).<span class="keyword">text</span>();<span class="comment">///读取所有段落的文本内容</span></span><br><span class="line"><span class="variable">$(</span><span class="string">"p"</span>).<span class="keyword">text</span>(<span class="string">"abcdefg"</span>);<span class="comment">///设置所有段落的文本内容为abcdefg</span></span><br></pre></td></tr></table></figure></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/08/01/jQuery中html-val-text/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/07/29/兼容ie6/" itemprop="url">
+                  三列中间自适应排版兼容ie6
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-07-29T11:35:11+08:00" content="2015-07-29">
+              2015-07-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js-jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">js/jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js-jQuery/案例/" itemprop="url" rel="index">
+                    <span itemprop="name">案例</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/29/兼容ie6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/29/兼容ie6/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-type"</span> <span class="attribute">content</span>=<span class="value">"tect/html; charset=utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>学习js<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css"></span><br><span class="line"><span class="id">#div1</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">400px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#dffeee</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">_margin-right</span>:<span class="value">-<span class="number">3px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="id">#div2</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">float</span>:<span class="value"> right</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#BEC27D</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">400px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">_margin-left</span>:<span class="value">-<span class="number">3px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="id">#div3</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> <span class="number">100px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">_margin</span>:<span class="value"> <span class="number">0</span> <span class="number">97px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#dddeee</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">400px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="id">#div4</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>; &#125;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"p1"</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"p2"</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"div1"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"div2"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"div3"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/07/06/mood1/" itemprop="url">
+                  2015年7月某天的状态
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-07-06T21:29:45+08:00" content="2015-07-06">
+              2015-07-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/06/mood1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/06/mood1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>今天是网站备案成功的第一天，从上个月中旬开始，就一直在想着什么时候能够通过审核，用“望眼欲穿”来形容一点儿都不为过。不过，当看到审核通过的信息时，那股子的冲劲也随着时间的冲淡慢慢的沉淀消去</p>
+<p>写这篇文章的时候，我正盘着腿，看着书，玩着电脑，带着压力在心中沉淀的那股子郁闷中进行的，写文章也是发泄的一种形式。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/06/mood1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
 
   </section>
 
@@ -373,7 +905,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
