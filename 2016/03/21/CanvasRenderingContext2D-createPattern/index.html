@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="css," />
+  <meta name="keywords" content="js," />
 
 
 
@@ -51,27 +51,16 @@
 
 
 
-<meta name="description" content="问题
-
-Backgrounds &amp;amp; Borders Level 3 还是一份草案的时候，CSS WG 就在是否支持多重边框的问题进行了大量的探讨，就像是讨论多重背景图片一样。不幸的是，当时认为多重边框的用处并不大，即使需要也可以使用border-image属性来模拟。不过，WG显然忘记了在 CSS 代码中灵活地调整边框，才是我们需要的，现在开发者只能使用一些Hack手段来模拟多重边框，比如">
+<meta name="description" content="createPattern()方法是为元素在指定的方向上设置重复模式的方法，（通俗些讲就是在画布中设置元素的平铺模式），此方法返回一个CanvasPattern对象，语法如下：1ctx.createPattern(image, repetition);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多重边框">
-<meta property="og:url" content="http://blog.yanyuans.com/2015/10/16/多重边框/index.html">
+<meta property="og:title" content="CanvasRenderingContext2D.createPattern()">
+<meta property="og:url" content="http://blog.yanyuans.com/2016/03/21/CanvasRenderingContext2D-createPattern/index.html">
 <meta property="og:site_name" content="学习笔记|生活随笔|">
-<meta property="og:description" content="问题
-
-Backgrounds &amp;amp; Borders Level 3 还是一份草案的时候，CSS WG 就在是否支持多重边框的问题进行了大量的探讨，就像是讨论多重背景图片一样。不幸的是，当时认为多重边框的用处并不大，即使需要也可以使用border-image属性来模拟。不过，WG显然忘记了在 CSS 代码中灵活地调整边框，才是我们需要的，现在开发者只能使用一些Hack手段来模拟多重边框，比如">
-<meta property="og:image" content="http://cdn.w3cplus.com/cdn/farfuture/K7Jv5MQoE7cWy8-hP61qex1z2arHUbnIyPNXspOnxOc/mtime:1440925615/sites/default/files/blogs/2015/1508/css-secrets-2-5.png">
-<meta property="og:image" content="http://cdn2.w3cplus.com/cdn/farfuture/cBORx7wn486meADp3rvOh9pBr2uHAW5EA_oTips9Pqk/mtime:1440925615/sites/default/files/blogs/2015/1508/css-secrets-2-6.png">
-<meta property="og:image" content="http://cdn2.w3cplus.com/cdn/farfuture/LrYaetz8QGDXMnb8n9j5lRWN8S7HR2zBMqnawc_L9wU/mtime:1440925615/sites/default/files/blogs/2015/1508/css-secrets-2-8.png">
-<meta property="og:image" content="http://cdn2.w3cplus.com/cdn/farfuture/H5WzqeIAqv2GDhUrqtAOkc4slF4ElXs6pGXtjP5jqqQ/mtime:1440925616/sites/default/files/blogs/2015/1508/css-secrets-2-9.png">
-<meta property="og:image" content="http://cdn.w3cplus.com/cdn/farfuture/KX688NEUVTeIEQky-eesT0Cr3iT2_kLHvHDhpKLs8r8/mtime:1440929948/sites/default/files/blogs/2015/1508/css-secrets-2-10.png">
-<meta property="og:updated_time" content="2015-12-16T07:26:56.838Z">
+<meta property="og:description" content="createPattern()方法是为元素在指定的方向上设置重复模式的方法，（通俗些讲就是在画布中设置元素的平铺模式），此方法返回一个CanvasPattern对象，语法如下：1ctx.createPattern(image, repetition);">
+<meta property="og:updated_time" content="2016-03-21T04:31:05.935Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="多重边框">
-<meta name="twitter:description" content="问题
-
-Backgrounds &amp;amp; Borders Level 3 还是一份草案的时候，CSS WG 就在是否支持多重边框的问题进行了大量的探讨，就像是讨论多重背景图片一样。不幸的是，当时认为多重边框的用处并不大，即使需要也可以使用border-image属性来模拟。不过，WG显然忘记了在 CSS 代码中灵活地调整边框，才是我们需要的，现在开发者只能使用一些Hack手段来模拟多重边框，比如">
+<meta name="twitter:title" content="CanvasRenderingContext2D.createPattern()">
+<meta name="twitter:description" content="createPattern()方法是为元素在指定的方向上设置重复模式的方法，（通俗些讲就是在画布中设置元素的平铺模式），此方法返回一个CanvasPattern对象，语法如下：1ctx.createPattern(image, repetition);">
 
 
 
@@ -83,7 +72,7 @@ Backgrounds &amp;amp; Borders Level 3 还是一份草案的时候，CSS WG 就�
   };
 </script>
 
-  <title> 多重边框 | 学习笔记|生活随笔| </title>
+  <title> CanvasRenderingContext2D.createPattern() | 学习笔记|生活随笔| </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +232,7 @@ Backgrounds &amp;amp; Borders Level 3 还是一份草案的时候，CSS WG 就�
             
             
               
-                多重边框
+                CanvasRenderingContext2D.createPattern()
               
             
           </h1>
@@ -252,8 +241,8 @@ Backgrounds &amp;amp; Borders Level 3 还是一份草案的时候，CSS WG 就�
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-16T14:19:36+08:00" content="2015-10-16">
-              2015-10-16
+            <time itemprop="dateCreated" datetime="2016-03-21T12:25:52+08:00" content="2016-03-21">
+              2016-03-21
             </time>
           </span>
 
@@ -262,8 +251,8 @@ Backgrounds &amp;amp; Borders Level 3 还是一份草案的时候，CSS WG 就�
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/html-css/" itemprop="url" rel="index">
-                    <span itemprop="name">html/css</span>
+                  <a href="/categories/js-jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">js/jQuery</span>
                   </a>
                 </span>
 
@@ -278,8 +267,8 @@ Backgrounds &amp;amp; Borders Level 3 还是一份草案的时候，CSS WG 就�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/16/多重边框/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/16/多重边框/" itemprop="commentsCount"></span>
+                <a href="/2016/03/21/CanvasRenderingContext2D-createPattern/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/21/CanvasRenderingContext2D-createPattern/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -298,32 +287,29 @@ Backgrounds &amp;amp; Borders Level 3 还是一份草案的时候，CSS WG 就�
       
 
       
-        <span itemprop="articleBody"><h4 style="color: #00a3cf; border-bottom: #ddd 1px solid; line-height: 2em;">问题</h4>
-
-<p>Backgrounds &amp; Borders Level 3 还是一份草案的时候，CSS WG 就在是否支持多重边框的问题进行了大量的探讨，就像是讨论多重背景图片一样。不幸的是，当时认为多重边框的用处并不大，即使需要也可以使用border-image属性来模拟。不过，WG显然忘记了在 CSS 代码中灵活地调整边框，才是我们需要的，现在开发者只能使用一些Hack手段来模拟多重边框，比如使用多重元素的嵌套来模拟多重边框。现在，我将告诉你一些更优秀的方法，无需使用多余的标签即可实现多重边框<a id="more"></a></p>
-<h4 style="color: #00a3cf; border-bottom: #ddd 1px solid; line-height: 2em;">一、box-shaodw解决方案</h4><br>现在，大多数的时候都用box-shadow来创建阴影。不过，很少有人知道它还接受第四个参数（spread），该参数可以缩放阴影的范围。比如下面的示例，我们创建了一个水平和垂直偏移量为0 的阴影，它就使用了上述所说的第四个参数：<br><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background: yellowgreen;</span><br><span class="line">box-shadow: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">10</span>px <span class="preprocessor">#<span class="number">655</span>;</span></span><br></pre></td></tr></table></figure><br><br>效果如下图所示：<br><img src="http://cdn.w3cplus.com/cdn/farfuture/K7Jv5MQoE7cWy8-hP61qex1z2arHUbnIyPNXspOnxOc/mtime:1440925615/sites/default/files/blogs/2015/1508/css-secrets-2-5.png" alt="这里写图片描述"><br><br>这还不够令人惊讶，因为它和我们使用 border 创建的边框差不多。不过，强大的是我们可以使用逗号来创建任意数量的阴影。所以，只需要继续添加阴影就可以实现多重阴影了，比如，添加一个颜色为 deeppink 的边框：<br><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background: yellowgreen;</span><br><span class="line">box-shadow: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">10</span>px <span class="preprocessor">#<span class="number">655</span>, <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">15</span>px deeppink;</span></span><br></pre></td></tr></table></figure><br><br>唯一需要牢记的事情就是，box-shadow 属性是叠在一起的，第一个阴影总是位于最顶层，所以你需要调整阴影的大小。比如，在上一段代码中，我们希望最外层的边框为 5px，那么我们就可以设置一个 15px(10px + 5px) 的阴影。如果你需要，那么就可以为指定任意层次的阴影：<br><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">background: yellowgreen;</span><br><span class="line">box-shadow: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">10</span>px <span class="preprocessor">#<span class="number">655</span>,</span></span><br><span class="line">            <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">15</span>px deeppink,</span><br><span class="line">            <span class="number">0</span> <span class="number">2</span>px <span class="number">5</span>px <span class="number">15</span><span class="function">px <span class="title">rgba</span><span class="params">(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">.6</span>)</span></span>;</span><br></pre></td></tr></table></figure><br><br>除了下述的少数情况外，使用 box-shadow 的解决方案都很好用：<br><br> 1. 阴影并不是边框，它们并不占有实际的空间，也不能归属于 box-sizing 的范围。不过，你可以通过使用内边距或外边距（取决于阴影是内部的还是外部的）占据额外的空间来模拟。<br> 2. 上述示例模拟的边框是位于元素外部的。它不能捕获类似悬停和点击的鼠标事件。如果事件很重要，那么可以通过添加 inset 关键字让阴影出现在元素的内部。注意，你可能需要添加额外的内边距来扩充空间。<br><img src="http://cdn2.w3cplus.com/cdn/farfuture/cBORx7wn486meADp3rvOh9pBr2uHAW5EA_oTips9Pqk/mtime:1440925615/sites/default/files/blogs/2015/1508/css-secrets-2-6.png" alt="这里写图片描述"><br><br><h4 style="color: #00a3cf; border-bottom: #ddd 1px solid; line-height: 2em;">二、outline解决方案</h4>
-
-<p>在某些情况下，如果我们只需要两层边框，那么我们只需要一层常规的边框和一层outline 就可以实现。这也让我们的边框在样式上保持了足够的灵活性（比如我们想要一个虚线边框，但是使用 box-shadow 的话，我们只能模拟出实线边框）。</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background</span>: yellowgreen;</span><br><span class="line"><span class="attribute">border</span>: <span class="number">10px</span> solid <span class="hexcolor">#655</span>;</span><br><span class="line"><span class="attribute">outline</span>: <span class="number">15px</span> solid deeppink;</span><br></pre></td></tr></table></figure>
-<p>使用 outline 的另一个好处就是，我们可以通过 outline-offset 控制 outline 到元素边框的距离，该属性甚至可以接受负值。这对很多效果都非常有用，如下图所示：<br><img src="http://cdn2.w3cplus.com/cdn/farfuture/LrYaetz8QGDXMnb8n9j5lRWN8S7HR2zBMqnawc_L9wU/mtime:1440925615/sites/default/files/blogs/2015/1508/css-secrets-2-8.png" alt="这里写图片描述"></p>
-<p><em>注：对于虚线样式的轮廓线，通过给 outline-offset 设置负值，创建了一个基础的缝纫效果 </em></p>
-<p>不过，这种方法也有一些限制：</p>
+        <span itemprop="articleBody"><p>createPattern()方法是为元素在指定的方向上设置重复模式的方法，（通俗些讲就是在画布中设置元素的平铺模式），此方法返回一个CanvasPattern对象，语法如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">ctx</span><span class="class">.createPattern</span>(<span class="tag">image</span>, <span class="tag">repetition</span>);</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>image：  做为重复图像源的 CanvasImageSource 对象。可以是下列之一：</p>
 <ol>
-<li>就像起初说的那样，这种方法只能模拟两层边框，因为每个元素只能创建一个 outline。如果需要创建多重边框，那么只能使用 box-shadow 的方法。</li>
-<li>border-radius 并不能让 outline 呈现圆角效果，所以，即使你的边框是圆角的，outline 仍然是直角的（如下图所示）。注意，CSS WG 认为这是一个 bug，在未来border-radius可能可以将 outline 变为圆角。</li>
-<li>根据 <a href="http://www.w3.org/TR/css3-ui/" target="_blank" rel="external">CSS User Interface Level 3 specification</a> 的说法：“outliens 可能并不是矩形。”虽然大多数情况下它看起来像是矩形，但是在你使用这一方法时，还是需要进行跨浏览器测试的。</li>
+<li>HTMLImageElement(img),</li>
+<li>HTMLVideoElement(video),</li>
+<li>HTMLCanvasElement(canvas),</li>
+<li>CanvasRenderingContext2D,</li>
+<li>ImageBitmap,</li>
+<li>ImageData, or a</li>
+<li>Blob.</li>
 </ol>
-<p><img src="http://cdn2.w3cplus.com/cdn/farfuture/H5WzqeIAqv2GDhUrqtAOkc4slF4ElXs6pGXtjP5jqqQ/mtime:1440925616/sites/default/files/blogs/2015/1508/css-secrets-2-9.png" alt="这里写图片描述"><br>通过outline创建的轮廓线并没有贴合元素的圆角，这个问题在未来可能会被修正</p>
-<h4 style="color: #00a3cf; border-bottom: #ddd 1px solid; line-height: 2em;">三、border-colors解决方案</h4><br>border-colors是一个独特的属性，从字面上来说就是为多边框而生，只可惜的是，到目前为止这仅是Gecko内核浏览器独有的属性。<br><br>如果不追究浏览器的兼容性，那么border-colors也可以实现多边框的效果。在具体使用时，需要分成四边边框来写：<br><br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-moz-border-top-colors: <span class="variable">&lt;color&gt;</span> <span class="variable">&lt;color&gt;</span> <span class="variable">&lt;color&gt;</span><span class="keyword">*</span>; /<span class="keyword">*</span>顶边边框<span class="keyword">*</span>/</span><br><span class="line">-moz-border-right-colors:<span class="variable">&lt;color&gt;</span> <span class="variable">&lt;color&gt;</span> <span class="variable">&lt;color&gt;</span><span class="keyword">*</span>; /<span class="keyword">*</span>右边边框<span class="keyword">*</span>/</span><br><span class="line">-moz-border-bottom-colors: <span class="variable">&lt;color&gt;</span> <span class="variable">&lt;color&gt;</span> <span class="variable">&lt;color&gt;</span><span class="keyword">*</span>; /<span class="keyword">*</span>底边边框<span class="keyword">*</span>/</span><br><span class="line">-moz-border-left-colors: <span class="variable">&lt;color&gt;</span> <span class="variable">&lt;color&gt;</span> <span class="variable">&lt;color&gt;</span><span class="keyword">*</span>; /<span class="keyword">*</span>左边边框<span class="keyword">*</span>/</span><br></pre></td></tr></table></figure><br><br><img src="http://cdn.w3cplus.com/cdn/farfuture/KX688NEUVTeIEQky-eesT0Cr3iT2_kLHvHDhpKLs8r8/mtime:1440929948/sites/default/files/blogs/2015/1508/css-secrets-2-10.png" alt="这里写图片描述"><br>虽然这种方式也能实现多边框效果，但相比前两种解决方案而言要麻烦一些,来看一个简单示例：<br><br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">border: <span class="number">10</span>px solid;</span><br><span class="line">-moz-border-top-colors: <span class="built_in">red</span> <span class="built_in">red</span> <span class="built_in">red</span> <span class="built_in">red</span> <span class="built_in">green</span> <span class="built_in">green</span> <span class="built_in">green</span> <span class="built_in">blue</span> <span class="built_in">blue</span> <span class="built_in">blue</span>;</span><br><span class="line">-moz-border-bottom-colors: <span class="built_in">red</span> <span class="built_in">red</span> <span class="built_in">red</span> <span class="built_in">red</span> <span class="built_in">green</span> <span class="built_in">green</span> <span class="built_in">green</span> <span class="built_in">blue</span> <span class="built_in">blue</span> <span class="built_in">blue</span>;</span><br><span class="line">-moz-border-right-colors: <span class="built_in">red</span> <span class="built_in">red</span> <span class="built_in">red</span> <span class="built_in">red</span> <span class="built_in">green</span> <span class="built_in">green</span> <span class="built_in">green</span> <span class="built_in">blue</span> <span class="built_in">blue</span> <span class="built_in">blue</span>;</span><br><span class="line">-moz-border-left-colors: <span class="built_in">red</span> <span class="built_in">red</span> <span class="built_in">red</span> <span class="built_in">red</span> <span class="built_in">green</span> <span class="built_in">green</span> <span class="built_in">green</span> <span class="built_in">blue</span> <span class="built_in">blue</span> <span class="built_in">blue</span>;</span><br></pre></td></tr></table></figure><br><br>为了要实现三个颜色的多边框效果，red占4px，green占3px和blue点4px。需要大费周折。而且还不能直接写border-colors，因为浏览器不识别这样的属性。<br><br>除此之外，目前浏览器对这个属性支持度相当的弱。可以说，它只是Firefox的私有属性。<br><h4 style="color: #00a3cf; border-bottom: #ddd 1px solid; line-height: 2em;">扩展阅读</h4>
-
+<p>repeat: 指定如何重复图像，允许的值为：</p>
 <ol>
-<li><a href="http://nicolasgallagher.com/multiple-backgrounds-and-borders-with-css2/" target="_blank" rel="external">Multiple Backgrounds and Borders with CSS 2.1</a></li>
-<li><a href="https://css-tricks.com/snippets/css/multiple-borders/" target="_blank" rel="external">Multiple Borders</a></li>
-<li><a href="http://www.impressivewebs.com/multiple-borders-css/" target="_blank" rel="external">Multiple Borders with CSS</a></li>
-<li><a href="https://carst.me/2011/08/multiple-borders-methods-css/" target="_blank" rel="external">Multiple borders methods with CSS</a></li>
+<li>“repeat”  （如果是“”或者null时，默认为该值）</li>
+<li>“repeat-x”</li>
+<li>“repeat-y”</li>
+<li>“no-repeat”</li>
 </ol>
-<p></p><h4 style="color: #00a3cf; border-bottom: #ddd 1px solid; line-height: 2em;">总结</h4><br>在CSS2.1的时代要实现多边框的效果，大多数都是依赖于添加标签或依赖于伪元素实现。而今天实现多边框的方案也越来越多，比如box-shadow和outline等。虽然这些方法能更好的帮助大家实现多边框效果，但每一种方案都有其自己的利弊。不过随着技术的向前发展，说不定哪一天会有一个属性直接有支持多边框，就如Firefox的私有属性-moz-border-&lt;[top]|[right]|[bottom]|[left]&gt;-colors。让我们一起期待吧。<p></p>
-<p>转载： <a href="http://www.w3cplus.com/css3/css-secrets/multiple-borders.html" target="_blank" rel="external">http://www.w3cplus.com/css3/css-secrets/multiple-borders.html</a></p>
+<p>以图片为实例进行说明下：<br>HTML部分代码:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="tag">canvas</span> id=<span class="string">"canvas"</span> <span class="attribute">width</span>=<span class="string">"600"</span> <span class="attribute">height</span>=<span class="string">"480"</span> style=<span class="string">"border: 1px #ccc dashed;"</span> onclick=<span class="string">"drawImg();"</span>&gt;&lt;/canvas&gt;</span><br></pre></td></tr></table></figure></p>
+<p>js部分代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var count = <span class="number">0</span>; <span class="comment">// 统计鼠标点击次数</span></span><br><span class="line">var canvas = document.querySelector(<span class="string">"canvas"</span>), ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line"><span class="function">function <span class="title">drawImg</span><span class="params">()</span></span>&#123;</span><br><span class="line">2var strPrnType = <span class="string">""</span>;</span><br><span class="line">2count++;</span><br><span class="line">2count = (count == <span class="number">5</span>) ? <span class="number">1</span> : count;</span><br><span class="line">2<span class="keyword">switch</span>(count) &#123;</span><br><span class="line">22<span class="keyword">case</span> <span class="number">1</span>: strPrnType = <span class="string">"no-repeat"</span>; <span class="keyword">break</span>;   </span><br><span class="line">22<span class="keyword">case</span> <span class="number">2</span>: strPrnType = <span class="string">"repeat-x"</span>; <span class="keyword">break</span>;</span><br><span class="line">22<span class="keyword">case</span> <span class="number">3</span>: strPrnType = <span class="string">"repeat-y"</span>; <span class="keyword">break</span>;</span><br><span class="line">22<span class="keyword">case</span> <span class="number">4</span>: strPrnType = <span class="string">"repeat"</span>; <span class="keyword">break</span>;</span><br><span class="line">2&#125;</span><br><span class="line">2ctx.clearRect(<span class="number">0</span>,<span class="number">0</span>, canvas.width, canvas.height);</span><br><span class="line">2var img = <span class="keyword">new</span> Image();</span><br><span class="line">2img.src = <span class="string">"http://yanyuans.com/demo/images/mg.png"</span>;</span><br><span class="line">2var prn = ctx.createPattern(img, strPrnType);</span><br><span class="line">2img.onload = function()&#123;</span><br><span class="line">22ctx.fillStyle = prn;</span><br><span class="line">22ctx.fillRect(<span class="number">0</span>,<span class="number">0</span>, canvas.width, canvas.height);</span><br><span class="line">2&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>createPattern()第一个参数可以是图片也可以是canvas等等，下面以canvas为例：<br>HTML部分：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="tag">canvas</span> id=<span class="string">"canvas"</span> <span class="attribute">width</span>=<span class="string">"600"</span> <span class="attribute">height</span>=<span class="string">"480"</span> style=<span class="string">"border: 1px #ccc dashed;"</span> onclick=<span class="string">"drawImg();"</span>&gt;&lt;/canvas&gt;</span><br></pre></td></tr></table></figure></p>
+<p>js部分：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.<span class="built_in">querySelector</span>(<span class="string">"canvas"</span>), ctx = canvas.getContext(<span class="string">"2d"</span>); </span><br><span class="line"><span class="keyword">var</span> pattern = <span class="built_in">document</span>.createElement(<span class="string">'canvas'</span>);</span><br><span class="line">pattern.width = <span class="number">40</span>;</span><br><span class="line">pattern.height = <span class="number">40</span>;</span><br><span class="line"><span class="keyword">var</span> pctx = pattern.getContext(<span class="string">'2d'</span>);</span><br><span class="line">pctx.fillStyle = <span class="string">"rgb(188, 222, 178)"</span>;</span><br><span class="line">pctx.fill();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> pattern = ctx.createPattern(pattern, <span class="string">"repeat"</span>);</span><br><span class="line">ctx.rect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">200</span>,<span class="number">200</span>);</span><br><span class="line">ctx.fillStyle = pattern;</span><br><span class="line">ctx.fill();</span><br></pre></td></tr></table></figure></p>
 </span>
       
     </div>
@@ -332,7 +318,7 @@ Backgrounds &amp;amp; Borders Level 3 还是一份草案的时候，CSS WG 就�
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag">#css</a>
+            <a href="/tags/js/" rel="tag">#js</a>
           
         </div>
       
@@ -341,17 +327,13 @@ Backgrounds &amp;amp; Borders Level 3 还是一份草案的时候，CSS WG 就�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/11/文字特效/" rel="next" title="文字特效">
-                <i class="fa fa-chevron-left"></i> 文字特效
+              <a href="/2016/03/03/Element-insertAdjacentHTML-position-text/" rel="next" title="Element.insertAdjacentHTML(position, text)">
+                <i class="fa fa-chevron-left"></i> Element.insertAdjacentHTML(position, text)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/10/24/CSSOM View Module相关整理/" rel="prev" title="CSS Object Model View相关整理">
-                CSS Object Model View相关整理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -366,10 +348,10 @@ Backgrounds &amp;amp; Borders Level 3 还是一份草案的时候，CSS WG 就�
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/10/16/多重边框/"
-     data-title="多重边框"
+        <div class="ds-share flat" data-thread-key="2016/03/21/CanvasRenderingContext2D-createPattern/"
+     data-title="CanvasRenderingContext2D.createPattern()"
      data-content=""
-     data-url="http://blog.yanyuans.com/2015/10/16/多重边框/">
+     data-url="http://blog.yanyuans.com/2016/03/21/CanvasRenderingContext2D-createPattern/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -400,8 +382,8 @@ Backgrounds &amp;amp; Borders Level 3 还是一份草案的时候，CSS WG 就�
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/10/16/多重边框/"
-           data-title="多重边框" data-url="http://blog.yanyuans.com/2015/10/16/多重边框/">
+      <div class="ds-thread" data-thread-key="2016/03/21/CanvasRenderingContext2D-createPattern/"
+           data-title="CanvasRenderingContext2D.createPattern()" data-url="http://blog.yanyuans.com/2016/03/21/CanvasRenderingContext2D-createPattern/">
       </div>
     
   </div>
@@ -558,7 +540,7 @@ Backgrounds &amp;amp; Borders Level 3 还是一份草案的时候，CSS WG 就�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">一、box-shaodw解决方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">二、outline解决方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">三、border-colors解决方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">扩展阅读</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
