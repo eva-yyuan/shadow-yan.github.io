@@ -61,7 +61,7 @@ getComputedStyle()是获取当前元素所有">
 getComputedStyle()是获取当前元素所有">
 <meta property="og:image" content="http://img.blog.csdn.net/20160415134759342">
 <meta property="og:image" content="http://img.blog.csdn.net/20160415134759342">
-<meta property="og:updated_time" content="2016-04-15T08:22:40.344Z">
+<meta property="og:updated_time" content="2016-04-15T09:29:35.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="window.getComputedStyle">
 <meta name="twitter:description" content="一、getComputedStyle是what？话说我最近正在看原生代码的时候，碰到了个眼熟的（我最近眼热，看碎都是熟的），虽说知道他的用法和功能，但是一直没有往深处了解下，所以就到标准上看了下简介1This method is used to get the computed style as it is defined in [CSS2]
@@ -293,7 +293,7 @@ getComputedStyle()是获取当前元素所有">
 
       
         <span itemprop="articleBody"><p><strong>一、getComputedStyle是what？</strong><br>话说我最近正在看原生代码的时候，碰到了个眼熟的（我最近眼热，看碎都是熟的），虽说知道他的用法和功能，但是一直没有往深处了解下，所以就到标准上看了下简介<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">This</span> <span class="keyword">method</span> <span class="keyword">is</span> used to get the computed style <span class="keyword">as</span> it <span class="keyword">is</span> defined <span class="keyword">in</span> [<span class="type">CSS2</span>]</span><br></pre></td></tr></table></figure></p>
-<p>getComputedStyle()是获取当前元素所有最终使用的CSS属性值的方法，其返回值是一个只可读取的CSS样式声明对象(CSSStyleDeclaration)。<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">The</span> <span class="type">Window</span>.getComputedStyle() <span class="keyword">method</span> gives the values <span class="keyword">of</span> all the <span class="type">CSS</span> properties <span class="keyword">of</span> an element after applying the active stylesheets <span class="keyword">and</span> resolving <span class="type">any</span> basic computation those values may contain.</span><br></pre></td></tr></table></figure></p>
+<p>getComputedStyle()是获取当前元素所有最终使用的CSS属性值的方法，其返回值是一个只可读取的CSS样式声明对象(CSSStyleDeclaration)。<a id="more"></a><br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">The</span> <span class="type">Window</span>.getComputedStyle() <span class="keyword">method</span> gives the values <span class="keyword">of</span> all the <span class="type">CSS</span> properties <span class="keyword">of</span> an element after applying the active stylesheets <span class="keyword">and</span> resolving <span class="type">any</span> basic computation those values may contain.</span><br></pre></td></tr></table></figure></p>
 <p>其语法如下：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> style = <span class="built_in">window</span>.getComputedStyle(element[, pseudoElt]);</span><br></pre></td></tr></table></figure></p>
 <p>第一个参数是必须是element对象（如果不是element节点，将会抛出错误），且不可省略。第二个参数虽说可以省略，但为了兼容性，在不是伪类的情况下建议设置为null</p>
 <p>getComputedStyle 返回的对象跟 element 调用 style 属性返回的对象是同一种类型，都为 CSSStyleDeclaration对象。但是这两者有着不同的用处，getComputedStyle 返回的是只读对象，用于检测元素的样式，而style则是可读可写，用于设置元素上的样式；第二个不同之处就在于getComputedStyle()会将最终应用在元素上的所有CSS属性对象都读取出来（无论有米有应用到该css样式），style则只能获取元素style属性中的CSS样式。</p>
