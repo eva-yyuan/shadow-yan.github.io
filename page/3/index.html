@@ -238,6 +238,111 @@
             
               
                 
+                <a class="post-title-link" href="/2015/08/24/parse与stringify/" itemprop="url">
+                  JSON.parse()与JSON.stringify()  （浏览器兼容性：IE8以上、Chrome、Firefox3.5、Opera10.5、Safari4.0）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-08-24T11:50:58+08:00" content="2015-08-24">
+              2015-08-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js-jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">js/jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/08/24/parse与stringify/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/24/parse与stringify/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>JSON.parse():将JavaScript对象表示法（JSON）字符串转换为对象（不允许以逗号结束），格式为：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JSON.<span class="function"><span class="title">parse</span><span class="params">(string[,reviver])</span></span></span><br><span class="line"><span class="comment">//string:必需的，要进行解析的有效的JSON字符串</span></span><br><span class="line"><span class="comment">//reviver：可选，用来转换解析出的属性值的函数</span></span><br><span class="line"><span class="comment">//返回值为一个从string字符串中解析出的对象或者数组</span></span><br></pre></td></tr></table></figure></p>
+<p>一个简单的实例如下：<br><figure class="highlight golo"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = '&#123;<span class="string">"name"</span>:<span class="string">"user"</span>,<span class="string">"password"</span>:<span class="string">"psd"</span>,<span class="string">"sex"</span>:<span class="string">"man"</span>,<span class="string">"age"</span>:<span class="string">"120"</span>&#125;';</span><br><span class="line"><span class="keyword">var</span> parse_str = JSON.parse(str);</span><br><span class="line">console.log(parse_str);  </span><br><span class="line">//Object &#123;name: <span class="string">"user"</span>, password: <span class="string">"psd"</span>, sex: <span class="string">"man"</span>, age: <span class="string">"120"</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'[1,2,3,4]'</span>;</span><br><span class="line"><span class="keyword">var</span> parse_str = <span class="built_in">JSON</span>.parse(str);</span><br><span class="line"><span class="built_in">console</span>.log(parse_str);</span><br><span class="line"><span class="comment">//[1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/08/24/parse与stringify/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/08/14/事件处理/" itemprop="url">
                   与事件处理相关的function：addEventListener、removeEventListener与attachEvent、detachEvent
                 </a>
@@ -744,121 +849,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/07/29/兼容ie6/" itemprop="url">
-                  三列中间自适应排版兼容ie6
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-07-29T11:35:11+08:00" content="2015-07-29">
-              2015-07-29
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/js-jQuery/" itemprop="url" rel="index">
-                    <span itemprop="name">js/jQuery</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/js-jQuery/案例/" itemprop="url" rel="index">
-                    <span itemprop="name">案例</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/07/29/兼容ie6/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/29/兼容ie6/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-type"</span> <span class="attribute">content</span>=<span class="value">"tect/html; charset=utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>学习js<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css"></span><br><span class="line"><span class="id">#div1</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">400px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#dffeee</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">_margin-right</span>:<span class="value">-<span class="number">3px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="id">#div2</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">float</span>:<span class="value"> right</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#BEC27D</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">400px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">_margin-left</span>:<span class="value">-<span class="number">3px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="id">#div3</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> <span class="number">100px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">_margin</span>:<span class="value"> <span class="number">0</span> <span class="number">97px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#dddeee</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">400px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="id">#div4</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>; &#125;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"p1"</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"p2"</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"div1"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"div2"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"div3"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -907,7 +897,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -921,7 +911,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
