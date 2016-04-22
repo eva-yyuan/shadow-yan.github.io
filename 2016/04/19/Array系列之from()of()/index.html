@@ -51,18 +51,20 @@
 
 
 
-<meta name="description" content="一、概述    Array.from()方法是ES6中新增加的数组方法，它可以将一个类数组对象或可迭代对象转换成真正的数组。    在 ES6 中， Class 语法允许我们为内置类型（比如 Array）和自定义类新建子类（比如叫 SubArray），子类会继承父类的静态方法，比如 SubArray.from()，调用该方法后会返回子类 SubArray 的一个实例，而不是 Array 的实例。">
+<meta name="description" content="一、from概述    Array.from()方法是ES6中新增加的数组方法，它可以将一个类数组对象或可迭代对象转换成真正的数组。    在 ES6 中， Class 语法允许我们为内置类型（比如 Array）和自定义类新建子类（比如叫 SubArray），子类会继承父类的静态方法，比如 SubArray.from()，调用该方法后会返回子类 SubArray 的一个实例，而不是 Array 的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Array系列之from方法">
-<meta property="og:url" content="http://blog.yanyuans.com/2016/04/19/Array系列之from方法/index.html">
+<meta property="og:url" content="http://blog.yanyuans.com/2016/04/19/Array系列之from()of()/index.html">
 <meta property="og:site_name" content="学习笔记|生活随笔|">
-<meta property="og:description" content="一、概述    Array.from()方法是ES6中新增加的数组方法，它可以将一个类数组对象或可迭代对象转换成真正的数组。    在 ES6 中， Class 语法允许我们为内置类型（比如 Array）和自定义类新建子类（比如叫 SubArray），子类会继承父类的静态方法，比如 SubArray.from()，调用该方法后会返回子类 SubArray 的一个实例，而不是 Array 的实例。">
+<meta property="og:description" content="一、from概述    Array.from()方法是ES6中新增加的数组方法，它可以将一个类数组对象或可迭代对象转换成真正的数组。    在 ES6 中， Class 语法允许我们为内置类型（比如 Array）和自定义类新建子类（比如叫 SubArray），子类会继承父类的静态方法，比如 SubArray.from()，调用该方法后会返回子类 SubArray 的一个实例，而不是 Array 的">
 <meta property="og:image" content="http://img.blog.csdn.net/20160418231223859">
 <meta property="og:image" content="http://img.blog.csdn.net/20160418231305095">
-<meta property="og:updated_time" content="2016-04-19T01:10:51.349Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20160421230418535">
+<meta property="og:image" content="http://img.blog.csdn.net/20160421230429535">
+<meta property="og:updated_time" content="2016-04-22T05:50:51.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Array系列之from方法">
-<meta name="twitter:description" content="一、概述    Array.from()方法是ES6中新增加的数组方法，它可以将一个类数组对象或可迭代对象转换成真正的数组。    在 ES6 中， Class 语法允许我们为内置类型（比如 Array）和自定义类新建子类（比如叫 SubArray），子类会继承父类的静态方法，比如 SubArray.from()，调用该方法后会返回子类 SubArray 的一个实例，而不是 Array 的实例。">
+<meta name="twitter:description" content="一、from概述    Array.from()方法是ES6中新增加的数组方法，它可以将一个类数组对象或可迭代对象转换成真正的数组。    在 ES6 中， Class 语法允许我们为内置类型（比如 Array）和自定义类新建子类（比如叫 SubArray），子类会继承父类的静态方法，比如 SubArray.from()，调用该方法后会返回子类 SubArray 的一个实例，而不是 Array 的">
 
 
 
@@ -269,8 +271,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/19/Array系列之from方法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/19/Array系列之from方法/" itemprop="commentsCount"></span>
+                <a href="/2016/04/19/Array系列之from()of()/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/19/Array系列之from()of()/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -289,17 +291,21 @@
       
 
       
-        <span itemprop="articleBody"><p><strong>一、概述</strong><br>    Array.from()方法是ES6中新增加的数组方法，它可以将一个类数组对象或可迭代对象转换成真正的数组。<br>    在 ES6 中， Class 语法允许我们为内置类型（比如 Array）和自定义类新建子类（比如叫 SubArray），子类会继承父类的静态方法，比如 SubArray.from()，调用该方法后会返回子类 SubArray 的一个实例，而不是 Array 的实例。<a id="more"></a></p>
-<p><strong>二、语法</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.<span class="function"><span class="title">from</span><span class="params">(arrayLike[, mapFn[, thisArg]])</span></span></span><br></pre></td></tr></table></figure></p>
+        <span itemprop="articleBody"><p><strong>一、from概述</strong><br>    Array.from()方法是ES6中新增加的数组方法，它可以将一个类数组对象或可迭代对象转换成真正的数组。<br>    在 ES6 中， Class 语法允许我们为内置类型（比如 Array）和自定义类新建子类（比如叫 SubArray），子类会继承父类的静态方法，比如 SubArray.from()，调用该方法后会返回子类 SubArray 的一个实例，而不是 Array 的实例。<a id="more"></a></p>
+<p><strong>二、from语法</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.<span class="function"><span class="title">from</span><span class="params">(arrayLike[, mapFn[, thisArg]])</span></span></span><br></pre></td></tr></table></figure></p>
 <p>arrayLike：想要转换成真实数组的类数组对象或可迭代对象；<br>mapFn： 可选参数，如果指定了该参数，则最后生成的数组会经过该函数的加工处理后再返回；<br>thisArg：可选参数，执行 mapFn 函数时 this 的值。</p>
 <p>在有mapFn这个可选参数时，Array.from(arrayLike[, mapFn[, thisArg]])相当于执行的是Array.from(arrayLike).map(mapFn[, thisArg]).</p>
 <p>将一个类数组/可迭代对象转换成真正的数组，在没有from方法时：<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Array.from = <span class="function"><span class="keyword">function</span><span class="params">(arrayList)</span></span> &#123;</span><br><span class="line">2<span class="keyword">return</span> [].slice.<span class="keyword">call</span>(arrayList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>或者复杂些多方面考虑的话：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://people.mozilla.org/~jorendorff/es6-draft.html#sec-array.from  根据ES6标准写的替代方案 不过有些内容过多，一般情况下不会发生，我就简化了下</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">Array</span>.from) &#123;</span><br><span class="line">  <span class="built_in">Array</span>.from = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> toStr = <span class="built_in">Object</span>.prototype.toString;</span><br><span class="line">    <span class="keyword">var</span> isCallable = <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">typeof</span> fn === <span class="string">'function'</span> || toStr.call(fn) === <span class="string">'[object Function]'</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">      <span class="keyword">var</span> C = <span class="keyword">this</span></span><br><span class="line">      <span class="keyword">var</span> items = <span class="built_in">Object</span>(arrayLike);</span><br><span class="line">      <span class="keyword">if</span> (arrayLike == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">"Array.from requires an array-like object - not null or undefined"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">var</span> mapFn = <span class="built_in">arguments</span>.length &gt; <span class="number">1</span> ? <span class="built_in">arguments</span>[<span class="number">1</span>] : <span class="keyword">void</span> <span class="literal">undefined</span>;</span><br><span class="line">      <span class="keyword">var</span> T;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> mapFn !== <span class="string">'undefined'</span>) &#123; </span><br><span class="line">         <span class="keyword">if</span> (!isCallable(mapFn)) &#123;</span><br><span class="line">          <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Array.from: when provided, the second argument must be a function'</span>);</span><br><span class="line">        &#125;       </span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">arguments</span>.length &gt; <span class="number">2</span>) &#123;</span><br><span class="line">          T = <span class="built_in">arguments</span>[<span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">var</span> len = toLength(items.length);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> A = isCallable(C) ? <span class="built_in">Object</span>(<span class="keyword">new</span> C(len)) : <span class="keyword">new</span> <span class="built_in">Array</span>(len);</span><br><span class="line">      <span class="keyword">var</span> k = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">var</span> kValue;</span><br><span class="line">      <span class="keyword">while</span> (k &lt; len) &#123;</span><br><span class="line">        kValue = items[k];</span><br><span class="line">        <span class="keyword">if</span> (mapFn) &#123;</span><br><span class="line">          A[k] = <span class="keyword">typeof</span> T === <span class="string">'undefined'</span> ? mapFn(kValue, k) : mapFn.call(T, kValue, k);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          A[k] = kValue;</span><br><span class="line">        &#125;</span><br><span class="line">        k += <span class="number">1</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      A.length = len;</span><br><span class="line">      <span class="keyword">return</span> A;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>三、实例</strong></p>
+<p><strong>三、from实例</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">///数组</span></span><br><span class="line">var test = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line">Array.from(test, x=&gt;x * x);  <span class="comment">//[1, 4, 9, 16, 25]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// 类数组</span></span><br><span class="line">(function()&#123;</span><br><span class="line">    var test = Array.from(arguments);</span><br><span class="line">    <span class="keyword">return</span> test;</span><br><span class="line">&#125;)(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>);  <span class="comment">//[1, 2, 3, 4, 5]</span></span><br><span class="line"></span><br><span class="line">Array.from(<span class="string">"test"</span>); <span class="comment">//["t", "e", "s", "t"]</span></span><br></pre></td></tr></table></figure>
-<p><strong>四、浏览器支持</strong><br>PC端：<img src="http://img.blog.csdn.net/20160418231223859" alt="这里写图片描述"></p>
+<p><strong>四、from浏览器支持</strong><br>PC端：<img src="http://img.blog.csdn.net/20160418231223859" alt="这里写图片描述"></p>
 <p>手机端：<img src="http://img.blog.csdn.net/20160418231305095" alt="这里写图片描述"></p>
+<p><strong>五、of()简介</strong><br>of()方法与from()方法有些类似，都是将传入的参数返回成数组，不同的是of()的参数类型以及长度不固定限制，而from的第一个参数类型有限制，第二个参数为可选参数<br>语法为：</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.<span class="keyword">of</span>(element0<span class="comment">[, element1<span class="comment">[, ...<span class="comment">[, elementN]</span>]</span>]</span>)</span><br></pre></td></tr></table></figure>
+<p>element参数的长度为不限制且为任意类型，在不支持的浏览器，可以用下列方法代替：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.of = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">  <span class="keyword">return</span> [].slice.call( <span class="built_in">arguments</span> ); </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器支持性：<br><img src="http://img.blog.csdn.net/20160421230418535" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20160421230429535" alt="这里写图片描述"></p>
 <blockquote>
 <p>参考文献：<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from</a><br><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-array.from" target="_blank" rel="external">http://www.ecma-international.org/ecma-262/6.0/#sec-array.from</a></p>
 </blockquote>
@@ -343,10 +349,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/19/Array系列之from方法/"
+        <div class="ds-share flat" data-thread-key="2016/04/19/Array系列之from()of()/"
      data-title="Array系列之from方法"
      data-content=""
-     data-url="http://blog.yanyuans.com/2016/04/19/Array系列之from方法/">
+     data-url="http://blog.yanyuans.com/2016/04/19/Array系列之from()of()/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -377,8 +383,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/19/Array系列之from方法/"
-           data-title="Array系列之from方法" data-url="http://blog.yanyuans.com/2016/04/19/Array系列之from方法/">
+      <div class="ds-thread" data-thread-key="2016/04/19/Array系列之from()of()/"
+           data-title="Array系列之from方法" data-url="http://blog.yanyuans.com/2016/04/19/Array系列之from()of()/">
       </div>
     
   </div>
